@@ -6,7 +6,7 @@ idna==2.8
 oauthlib==2.1.0
 PyJWT==1.7.1
 python-openid==2.2.5
-python-social-auth==0.2.14
+social-auth-app-django==2.1.0
 requests==2.21.0
 requests-oauthlib==1.0.0
 six==1.12.0
