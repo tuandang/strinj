@@ -132,11 +132,11 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend'
 )
 
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = 'https://cryptic-brook-75782.herokuapp.com/social/complete/facebook/'
 
 SOCIAL_AUTH_FACEBOOK_KEY = '269842407020498'
 SOCIAL_AUTH_FACEBOOK_SECRET = '7f7de15749491e53643250916e93bf01'
-
+SOCIAL_AUTH_REDIRECT_IS_HTTPS = True
 # replace database settings to use posgress on Heroky
 import dj_database_url
 db_from_env = dj_database_url.config()
