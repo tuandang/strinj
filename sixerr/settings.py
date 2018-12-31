@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'trq4p(!uan1t+fdszf+0=7%kh_r3c&d%yf#bwji6*4j=0e8atw'
+SECRET_KEY = 'erxyb&&yjj9)y*4ju25rg%xsz@ob!j*-^-i-tp_+=hk@szrys@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'sixerrapp',
-    'social.apps.django_app.default',
+    'social_django'
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -65,8 +65,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'social.apps.django_app.context_processors.backends',
-                'social.apps.django_app.context_processors.login_redirect',
+                'social_django.context_processors.backends',
+                'social_django.context_processors.login_redirect',
             ],
         },
     },
@@ -124,20 +124,22 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# To serve static files on Heroku
+# to serve static files on Heroku
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 AUTHENTICATION_BACKENDS = (
-    'social.backends.facebook.FacebookOAuth2',
+    'social_core.backends.facebook.FacebookOAuth2',
     'django.contrib.auth.backends.ModelBackend'
 )
+
+#LOGIN_REDIRECT_URL = 'https://cryptic-brook-75782.herokuapp.com/social/complete/facebook/'
 
 LOGIN_REDIRECT_URL = '/'
 
 SOCIAL_AUTH_FACEBOOK_KEY = '269842407020498'
 SOCIAL_AUTH_FACEBOOK_SECRET = '7f7de15749491e53643250916e93bf01'
 
-# Replace database setting to use postgresql on Heroku
+# replace database settings to use posgress on Heroky
 import dj_database_url
 db_from_env = dj_database_url.config()
 DATABASES['default'].update(db_from_env)
