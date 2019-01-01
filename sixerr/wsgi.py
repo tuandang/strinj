@@ -16,5 +16,5 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "sixerr.settings")
 application = get_wsgi_application()
 
 # Use whitenoise to serve static files on Heroku yep
-from whitenoise.django import DjangoWhiteNoise
-application = DjangoWhiteNoise(application)
+# from whitenoise.django import DjangoWhiteNoise
+# application = DjangoWhiteNoise(application)
