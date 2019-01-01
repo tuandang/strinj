@@ -161,4 +161,4 @@ DATABASES['default'].update(db_from_env)
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
-SOCIAL_AUTH_REDIRECT_IS_HTTPS = True
+#SOCIAL_AUTH_REDIRECT_IS_HTTPS = True
