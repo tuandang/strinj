@@ -1,15 +1,10 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 
-from .models import Gig, Profile, Purchase, Review
+from .models import Gig, Profile, Purchase, Review, Company
 from .forms import GigForm
 
-import braintree
 
-braintree.Configuration.configure(braintree.Environment.Sandbox,
-                                    merchant_id="3hrtz5z44xv9rc5h",
-                                    public_key="njnd4544v5q2zd2h",
-                                    private_key="604996d1b5f408541a9a34b34a18d373")
 
 # Create your views here..
 def home(request):
@@ -37,8 +32,8 @@ def gig_detail(request, id):
         show_post_review = Purchase.objects.filter(gig=gig, buyer=request.user).count() > 0
 
     reviews = Review.objects.filter(gig=gig)
-    client_token = braintree.ClientToken.generate()
-    return render(request, 'gig_detail.html', {"show_post_review": show_post_review ,"reviews": reviews, "gig": gig, "client_token": client_token})
+    companies = Company.objects.filter(gig=gig)
+    return render(request, 'gig_detail.html', {"show_post_review": show_post_review ,"reviews": reviews, "companies": companies, "gig": gig})
 
 @login_required(login_url="/")
 def create_gig(request):
@@ -94,24 +89,7 @@ def profile(request, username):
     gigs = Gig.objects.filter(user=profile.user, status=True)
     return render(request, 'profile.html', {"profile": profile, "gigs": gigs})
 
-@login_required(login_url="/")
-def create_purchase(request):
-    if request.method == 'POST':
-        try:
-            gig = Gig.objects.get(id = request.POST['gig_id'])
-        except Gig.DoesNotExist:
-            return redirect('/')
 
-        nonce = request.POST["payment_method_nonce"]
-        result = braintree.Transaction.sale({
-            "amount": gig.price,
-            "payment_method_nonce": nonce
-        })
-
-        if result.is_success:
-            Purchase.objects.create(gig=gig, buyer=request.user)
-
-    return redirect('/')
 
 @login_required(login_url="/")
 def my_sellings(request):

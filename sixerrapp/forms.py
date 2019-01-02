@@ -4,4 +4,4 @@ from .models import Gig
 class GigForm(ModelForm):
     class Meta:
         model = Gig
-        fields = ['title', 'category', 'description', 'price', 'photo', 'status']
+        fields = ['title', 'category', 'description', 'photo', 'status']

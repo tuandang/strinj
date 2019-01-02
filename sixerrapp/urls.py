@@ -8,7 +8,6 @@ urlpatterns = [
     url(r'^create_gig/$', views.create_gig, name='create_gig'),
     url(r'^edit_gig/(?P<id>[0-9]+)/$', views.edit_gig, name='edit_gig'),
     url(r'^profile/(?P<username>\w+)/$', views.profile, name='profile'),
-    url(r'^checkout/$', views.create_purchase, name='create_purchase'),
     url(r'^my_sellings/$', views.my_sellings, name='my_sellings'),
     url(r'^my_buyings/$', views.my_buyings, name='my_buyings'),
     url(r'^category/(?P<link>[\w|-]+)/$', views.category, name='category'),

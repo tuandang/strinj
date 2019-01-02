@@ -24,7 +24,7 @@
           <form class="navbar-form navbar-left" role="search" method="GET" action="/search/">
             <div class="form-group">
               <div class="input-group">
-                <input type="text" name="title" class="form-control" placeholder="Find services">
+                <input type="text" name="title" class="form-control" placeholder="Find stories">
                 <span class="input-group-btn">
                   <button class="btn btn-success">Find</button>
                 </span>
@@ -41,11 +41,9 @@
                   {{ user.get_full_name|default:user.username }} <span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a href="{% url 'create_gig' %}">Create a gig</a></li>
-                  <li><a href="{% url 'my_gigs' %}">My Gigs</a></li>
+                  <li><a href="{% url 'create_gig' %}">Create a story</a></li>
+                  <li><a href="{% url 'my_gigs' %}">My Stories</a></li>
                   <li role="separator" class="divider"></li>
-                  <li><a href="{% url 'my_sellings' %}">My Sellings</a></li>
-                  <li><a href="{% url 'my_buyings' %}">My Buyings</a></li>
                   <li><a href="{% url 'profile' user.username%}">My Profile</a></li>
 
                   <li><a href="{% url 'auth:logout' %}?next={{request.path}}">Logout</a></li>
@@ -80,7 +78,7 @@
 
     <footer id="footer">
       <div class="container">
-        <span>Sixerr App &copy; 2016</span>
+        <span>Strinj &copy; 2018</span><br>
       </div>
     </footer>
   </body>
