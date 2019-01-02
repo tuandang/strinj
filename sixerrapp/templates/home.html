@@ -4,17 +4,16 @@
 {% block page %}
 
   <div class="row">
-    <div class="col-md-12">
-      <img src="{% static 'img/banner.gif' %}" class="banner">
+    <div class="col-md-12"><h1></h1>
     </div>
 
     {% for gig in gigs %}
-      <div class="col-md-3">
+      <div class="col-md-12">
         <div class="thumbnail">
-          <a href="{% url 'gig_detail' gig.id %}"><img src="/media/{{gig.photo}}"></a>
+          <img style="margin-top:30px" src="/media/{{gig.photo}}" width="700" height="300">
           <div class="caption">
-            <p><a href="{% url 'gig_detail' gig.id %}">{{gig.title}}</a></p>
-            <p><span>by <a href="{%url 'profile' gig.user.username %}">{{gig.user.username}}</a></span><b class="green pull-right">{{gig.price}}</b></p>
+            <p style="margin-top:30px;margin-bottom:30px;margin-left:30px;margin-right:30px;line-height:1.7">{{gig.description}}</p>
+            <p style="margin-left:30px;margin-right:30px"><span>By <a href="{%url 'profile' gig.user.username %}">{{gig.user.username}}</a></span></p>
           </div>
         </div>
       </div>

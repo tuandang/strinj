@@ -26,7 +26,7 @@ class Gig(models.Model):
 
     title = models.CharField(max_length=500)
     category = models.CharField(max_length=2, choices=CATEGORY_CHOICES)
-    description = models.CharField(max_length=1000)
+    description = models.TextField()
     price = models.IntegerField(default=6)
     photo = models.FileField(upload_to='gigs')
     status = models.BooleanField(default=True)
