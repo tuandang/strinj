@@ -25,7 +25,7 @@ SECRET_KEY = 'erxyb&&yjj9)y*4ju25rg%xsz@ob!j*-^-i-tp_+=hk@szrys@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [www.strinj.com]
+ALLOWED_HOSTS = ['www.strinj.com']
 
 
 # Application definition
