@@ -11,7 +11,7 @@ braintree.Configuration.configure(braintree.Environment.Sandbox,
                                     public_key="njnd4544v5q2zd2h",
                                     private_key="604996d1b5f408541a9a34b34a18d373")
 
-# Create your views here.
+# Create your views here..
 def home(request):
     gigs = Gig.objects.filter(status=True)
     return render(request, 'home.html', {"gigs": gigs})
