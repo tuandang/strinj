@@ -16,7 +16,7 @@ class Profile(models.Model):
         return self.user.username
 
 class Company(models.Model):
-    title = models.CharField(max_length=501)
+    title = models.CharField(max_length=500)
     description = models.TextField()
     url = models.TextField()
     time = models.DateTimeField(default=timezone.now)
