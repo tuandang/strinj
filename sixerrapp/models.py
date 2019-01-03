@@ -39,7 +39,7 @@ class Gig(models.Model):
     photo = models.FileField(upload_to='gigs')
     status = models.BooleanField(default=True)
     user = models.ForeignKey(User)
-    company = models.ForeignKey(Company)
+    company = models.ManyToManyField(Company)
     create_time = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
