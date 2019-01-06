@@ -3,7 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Sixerr App</title>
+    <title>Strinj</title>
     <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}">
 
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
@@ -16,18 +16,14 @@
   </head>
   <body>
     <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="navbar-inverse">
         <div class="container">
           <div class="navbar-header">
-            <a class="navbar-brand" href="/"><img src="{% static 'img/logo.png' %}" height="23"></a>
+            <a style="padding-top:0px;" class="navbar-brand" href="/"><img src="{% static 'img/logo_new.png' %}" height="50"></a>
           </div>
           <form class="navbar-form navbar-left" role="search" method="GET" action="/search/">
             <div class="form-group">
               <div class="input-group">
-                <input type="text" name="title" class="form-control" placeholder="Find stories">
-                <span class="input-group-btn">
-                  <button class="btn btn-success">Find</button>
-                </span>
+                <input style="text-align:center;border-radius: 20px;width:300px;" type="text" name="title" class="form-control" placeholder="Search">
               </div>
 
             </div>
@@ -56,18 +52,6 @@
             {% endif %}
           </ul>
         </div>
-      </div>
-      <div id="category">
-        <div class="container">
-          <ul class="nav navbar-nav">
-            <li><a href="/category/graphics-design">Art & Design</a></li>
-            <li><a href="/category/digital-marketing">Business, Finance & Accounting</a></li>
-            <li><a href="/category/video-animation">Math & Science</a></li>
-            <li><a href="/category/music-audio">Education</a></li>
-            <li><a href="/category/programming-tech">Information Technology</a></li>
-          </ul>
-        </div>
-      </div>
     </nav>
     <div id="body">
       <div class="container">
