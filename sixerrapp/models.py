@@ -8,7 +8,7 @@ from django.db import models
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     avatar = models.CharField(max_length=500)
-
+    resume = models.FileField(upload_to='resumes', null=True)
 
 
     def __str__(self):
