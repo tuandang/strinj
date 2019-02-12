@@ -79,7 +79,16 @@ WSGI_APPLICATION = 'sixerr.wsgi.application'
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
 DATABASES = {
-'default': dj_database_url.config(default='ppostgres://ejlggtgioflbvb:676afb6b7d92553770601552e14e63e0020c9f233c5df03daf1f66c18bd031c7@ec2-23-21-171-25.compute-1.amazonaws.com:5432/dblm45j7jeqk99')
+    'default': {
+        #'ENGINE': 'django.db.backends.sqlite3',
+        #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'taskbuster_db',
+        'USER': 'admin',
+        'PASSWORD': '20110807',
+        'HOST': 'postgres://ejlggtgioflbvb:676afb6b7d92553770601552e14e63e0020c9f233c5df03daf1f66c18bd031c7@ec2-23-21-171-25.compute-1.amazonaws.com:5432/dblm45j7jeqk99',
+        'PORT': '',
+    }
 }
 
 
