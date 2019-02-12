@@ -1,0 +1,1391 @@
+[
+{
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$24000$OZuxEGuu4TR5$ngmFaKeb2soId/FWhAJY5ACwSDefaKaiDa7zNVwzTL4=",
+        "last_login": "2019-01-07T00:43:15.094Z",
+        "is_superuser": true,
+        "username": "admin",
+        "first_name": "",
+        "last_name": "",
+        "email": "tuan@gmail.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2018-12-31T09:34:25.534Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+        "password": "!szWUW5rTRVSDkpXXgxXs220fvUzL7eQxTa3EZyDI",
+        "last_login": "2019-01-06T18:24:50.433Z",
+        "is_superuser": false,
+        "username": "TuanDang",
+        "first_name": "Tuan",
+        "last_name": "Dang",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2018-12-31T09:57:28.291Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 3,
+    "fields": {
+        "password": "!ygmfnQO5vKY9NajgepgUOTbqPHxZJwUaagmf3M03",
+        "last_login": "2018-12-31T13:28:49.501Z",
+        "is_superuser": false,
+        "username": "TonyStark",
+        "first_name": "Tony",
+        "last_name": "Stark",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2018-12-31T13:28:49.476Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "4tbhgxxg4tsc70o5icqh6ukp4ys1be3w",
+    "fields": {
+        "session_data": "MzBkZmRiNjk5N2QwNTI2YzBiYTg1OTMwNGY3YjhjYTFiYzhmNGU2Nzp7ImZhY2Vib29rX3N0YXRlIjoiT0NaN2UySnJOREU3WEZOaTlPRTNQbkVRUjUzcDA4eEEiLCJuZXh0IjoiLyJ9",
+        "expire_date": "2019-02-26T05:27:29.096Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "c7vpr42s4gjuyw4tmkyuaiu5azlv4shq",
+    "fields": {
+        "session_data": "MDQ4MTg3MjcyZWYwMmIzODkyYmE1NWI0MTZkY2VhMTc2Y2RhOWViYTp7Il9hdXRoX3VzZXJfaGFzaCI6ImE0YjUyODM4MjA3NzVjMGVjMTE0NzRhODY2ZDc5ZTM0ODE4ZWMwODEiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOiIxIn0=",
+        "expire_date": "2019-01-20T23:39:22.955Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "hrwz9tooemm7ge7rkrhcq8dpb71d7lpi",
+    "fields": {
+        "session_data": "ZGRjNjI3Y2UyMjhjZmUzZjlmYzAwMzZmNmIzMjg3MzIwYjdhNjNlYTp7ImZhY2Vib29rX3N0YXRlIjoibURINTltSjZ4Z3N6OWU3YzQ5V1hCTkpMY2M2TTFJaVYiLCJuZXh0IjoiLyJ9",
+        "expire_date": "2019-02-26T05:34:33.011Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "npth1pp9l4xvxybp3pefjk18zcl7zvhv",
+    "fields": {
+        "session_data": "MDQ4MTg3MjcyZWYwMmIzODkyYmE1NWI0MTZkY2VhMTc2Y2RhOWViYTp7Il9hdXRoX3VzZXJfaGFzaCI6ImE0YjUyODM4MjA3NzVjMGVjMTE0NzRhODY2ZDc5ZTM0ODE4ZWMwODEiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOiIxIn0=",
+        "expire_date": "2019-01-21T00:43:15.102Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "uhzxiscbjxi21s496yjdmjj8gyuvt1wh",
+    "fields": {
+        "session_data": "Y2I4ZTFmYWFjNjkxYzMzYTVmYWE2NjI0MGFmYzU1YTk3NmVkMTIyNzp7ImZhY2Vib29rX3N0YXRlIjoiNVlGQ3dqY253ZXhQVFcxN2FKYlhramZRTlJMSUpuSjQiLCJuZXh0IjoiLyJ9",
+        "expire_date": "2019-02-26T05:29:45.371Z"
+    }
+},
+{
+    "model": "sixerrapp.profile",
+    "pk": 1,
+    "fields": {
+        "user": [
+            "TuanDang"
+        ],
+        "avatar": "http://graph.facebook.com/10161290925175068/picture?type=large",
+        "resume": ""
+    }
+},
+{
+    "model": "sixerrapp.profile",
+    "pk": 2,
+    "fields": {
+        "user": [
+            "TonyStark"
+        ],
+        "avatar": "http://graph.facebook.com/105712093839120/picture?type=large",
+        "resume": ""
+    }
+},
+{
+    "model": "sixerrapp.company",
+    "pk": 1,
+    "fields": {
+        "title": "Vinfast",
+        "description": "Sub company within Vingroup",
+        "url": "https://www.vietnamworks.com/vinfast-kv",
+        "time": "2019-01-02T10:38:00Z"
+    }
+},
+{
+    "model": "sixerrapp.company",
+    "pk": 2,
+    "fields": {
+        "title": "Tiki",
+        "description": "E commerce company",
+        "url": "https://tuyendung.tiki.vn/",
+        "time": "2019-01-02T10:38:56Z"
+    }
+},
+{
+    "model": "sixerrapp.company",
+    "pk": 3,
+    "fields": {
+        "title": "Vinschool",
+        "description": "Sub company within Vingroup",
+        "url": "http://vinschool.com/vi-vn/gioi-thieu/tuyen-dung.aspx",
+        "time": "2019-01-02T11:03:49Z"
+    }
+},
+{
+    "model": "sixerrapp.company",
+    "pk": 4,
+    "fields": {
+        "title": "Elsa",
+        "description": "English pronunciation startup",
+        "url": "https://www.elsaspeak.com/careers",
+        "time": "2019-01-02T11:05:50Z"
+    }
+},
+{
+    "model": "sixerrapp.company",
+    "pk": 6,
+    "fields": {
+        "title": "Vatgia",
+        "description": "Site to buy things",
+        "url": "http://vnpgroup.vn/categories/3/tuyen-dung.html",
+        "time": "2019-01-03T03:50:49Z"
+    }
+},
+{
+    "model": "sixerrapp.company",
+    "pk": 7,
+    "fields": {
+        "title": "123Pay",
+        "description": "Payment sub company within Vingroup",
+        "url": "https://mywork.com.vn/tuyen-dung/viec-lam/685825/senior-sales-executive-123-pay.html",
+        "time": "2019-01-03T04:03:03Z"
+    }
+},
+{
+    "model": "sixerrapp.gig",
+    "pk": 1,
+    "fields": {
+        "title": "Klara",
+        "category": "MS",
+        "description": "Klara motorbike, with a serious investment in design and technology by Vinfast, is considered a national pride. Especially, the motorbike has a digital screen that can be connected to a smartphone and GPS, as well as a water resistant system that helps your motorbike survive the rainy season. If you are interested in working on the challenges at Vinfast, consider applying to the postings below!",
+        "photo": "gigs/12-vinfast-klara-c64f.jpg",
+        "status": true,
+        "user": [
+            "TuanDang"
+        ],
+        "create_time": "2018-12-31T10:19:19Z",
+        "company": [
+            1
+        ]
+    }
+},
+{
+    "model": "sixerrapp.gig",
+    "pk": 2,
+    "fields": {
+        "title": "Elsa Featured",
+        "category": "IT",
+        "description": "English pronunciation is always one of the challenges of Vietnamese people. Startup Elsa is solving this problem by using Artificial Intelligence to analyze your pronunciation. This application has helped students and working professionals alike to improve their English speaking skills. Let\u2019s discover opportunities at Elsa!",
+        "photo": "gigs/elsa-speaks.png",
+        "status": true,
+        "user": [
+            "TuanDang"
+        ],
+        "create_time": "2018-12-31T11:39:27Z",
+        "company": [
+            4
+        ]
+    }
+},
+{
+    "model": "sixerrapp.gig",
+    "pk": 3,
+    "fields": {
+        "title": "Shark Dung's Companies",
+        "category": "IT",
+        "description": "Shark Nguyen Manh Dzung, the only Vietnamese to manage of Japan\u2019s Cyber Agent Venture Firm, is one of the new sharks in Shark Tank Vietnam Season 2. He is considered the \u201cfather\u201d of popular startups in Vietnam such as Tiki, Vatgia, NhacCuaTui, BatDongSan, Jupviec, Vicare, Topica, Luxstay, CleverAds, and Vexere. In Shark Tank Vietnam Season 2, Shark Dzung promised to invest in new startups ViralWorks and Curnon.",
+        "photo": "gigs/Shark-Dzung-Nguyen.jpg",
+        "status": true,
+        "user": [
+            "TuanDang"
+        ],
+        "create_time": "2018-12-31T12:18:33Z",
+        "company": [
+            2,
+            6
+        ]
+    }
+},
+{
+    "model": "sixerrapp.gig",
+    "pk": 4,
+    "fields": {
+        "title": "Education Trend",
+        "category": "ED",
+        "description": "Gi\u00e1o s\u01b0 Ng\u00f4 B\u1ea3o Ch\u00e2u \u0111\u00e3 \u0111\u1ebfn d\u1ef1 l\u1ec5 khai gi\u1ea3ng c\u1ee7a h\u1ec7 th\u1ed1ng tr\u01b0\u1eddng ph\u1ed5 th\u00f4ng li\u00ean c\u1ea5p Vinschool v\u00e0 c\u00f9ng chia s\u1ebb t\u1ea7m nh\u00ecn v\u1ec1 m\u1ed9t h\u1ec7 th\u1ed1ng gi\u00e1o d\u1ee5c ch\u1ea5t l\u01b0\u1ee3ng, to\u00e0n di\u1ec7n, nh\u00e2n b\u1ea3n m\u00e0 \u0111\u1ed9i ng\u0169 gi\u00e1o vi\u00ean, qu\u1ea3n l\u00fd gi\u00e1o d\u1ee5c t\u1ea1i tr\u01b0\u1eddng \u0111ang t\u1eebng b\u01b0\u1edbc hi\u1ec7n th\u1ef1c ho\u00e1. \u0110i\u1ec3m \u0111\u1eb7c bi\u1ec7t h\u01a1n t\u1ea1i Vinschool khi b\u1ea1n mu\u1ed1n \u0111\u1eb7t t\u00e2m huy\u1ebft v\u00e0o gi\u1ea3ng d\u1ea1y \u0111\u00f3 l\u00e0 ch\u1ebf \u0111\u1ed9 l\u01b0\u01a1ng t\u1ed1t v\u00e0 ch\u01b0\u01a1ng tr\u00ecnh \u0111\u00e0o t\u1ea1o \u201cGi\u00e1o vi\u00ean Tinh hoa\" \u0111\u01b0\u1ee3c thi\u1ebft k\u1ebf chu\u1ea9n qu\u1ed1c t\u1ebf, gi\u00fap cho \u0111\u1ed9i ng\u0169 gi\u00e1o vi\u00ean d\u00e0nh h\u1ebft t\u00e2m s\u1ee9c cho c\u00f4ng cu\u1ed9c \u0111\u00e0o t\u1ea1o th\u1ebf h\u1ec7 c\u00f4ng d\u00e2n to\u00e0n c\u1ea7u \u0111\u1ebfn t\u1eeb Vi\u1ec7t Nam. N\u1ebfu b\u1ea1n l\u00e0 m\u1ed9t trong nh\u1eefng du h\u1ecdc sinh ho\u1eb7c gi\u00e1o vi\u00ean tr\u1ebb n\u0103ng \u0111\u1ed9ng, mu\u1ed1n h\u1ecdc h\u1ecfi th\u00eam v\u1ec1 ngh\u1ec1 gi\u00e1o v\u00e0 l\u00e0m vi\u1ec7c trong m\u00f4i tr\u01b0\u1eddng qu\u1ed1c t\u1ebf th\u00ec Vinschool l\u00e0 m\u1ed9t n\u01a1i kh\u1edfi \u0111\u1ea7u kh\u00f4ng n\u00ean b\u1ecf qua.",
+        "photo": "gigs/ngo_bao_chau.jpg",
+        "status": false,
+        "user": [
+            "TuanDang"
+        ],
+        "create_time": "2019-01-02T09:47:00Z",
+        "company": [
+            3
+        ]
+    }
+},
+{
+    "model": "sixerrapp.gig",
+    "pk": 6,
+    "fields": {
+        "title": "FinTech Companies",
+        "category": "MS",
+        "description": "According to survey, 82% of traditional service providers show interest in cooperating with Fintech companies in the next 3-5 years. 77% of those providers want to use blockchain as part of their system in 2020. Since 2008, Vietnam has more than 20 Fintech companies creating digital payment solutions such as VinaPay, Senpay, Zingpay, or 123Pay. Some other companies want to simplify the fundraising services such as FundStart, Betado, and Firststep. Some other companies want to improve the money exchange services such as Matchmove and Cash2vn. If you are interested in working in these fields, please apply below!",
+        "photo": "gigs/Blockchain_fuOfStM.jpg",
+        "status": true,
+        "user": [
+            "admin"
+        ],
+        "create_time": "2019-01-02T09:57:38Z",
+        "company": [
+            7
+        ]
+    }
+},
+{
+    "model": "social_django.usersocialauth",
+    "pk": 1,
+    "fields": {
+        "user": [
+            "TuanDang"
+        ],
+        "provider": "facebook",
+        "uid": "10161290925175068",
+        "extra_data": "{\"granted_scopes\": [\"public_profile\"], \"access_token\": \"EAAD1a5TQ19IBALoIzGQ5YpZAkKCH37lVADryO0Fbinlvgu38mEVWqz8dcgkfZA3irzCqFWYsXvepNqGrNCCE6wKZAkwMZCghoR601btGNpFZAjhmWJlRkuY4yWyjKpoZBELlu49Lk5BkWVNieoIo70miSd4e1Nk4u5rzUGLxHHjwZDZD\", \"expires\": 5161332, \"denied_scopes\": null, \"token_type\": null, \"auth_time\": 1546821757, \"id\": \"10161290925175068\"}"
+    }
+},
+{
+    "model": "social_django.usersocialauth",
+    "pk": 2,
+    "fields": {
+        "user": [
+            "TonyStark"
+        ],
+        "provider": "facebook",
+        "uid": "105712093839120",
+        "extra_data": "{\"granted_scopes\": [\"public_profile\"], \"access_token\": \"EAAD1a5TQ19IBAIERcpOD8cMgmFZCpatjIqZA8JX3bGJ8tme4Xcr1Vbuom2o4DdxF8zJe1ABX0ZB56Ld0UGI3ZBBjW5azpuF0XZAuQhDUjh7mXdx7rKc8EHpNA53cidGFaah6fQ07wypZBMYhKQgmDFnngEHneuVdwnHvCuab2fl7scXBIq3dOE\", \"expires\": 5183998, \"denied_scopes\": null, \"token_type\": null, \"auth_time\": 1546262929, \"id\": \"105712093839120\"}"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+        "action_time": "2018-12-31T10:20:05.006Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "sixerrapp",
+            "gig"
+        ],
+        "object_id": "1",
+        "object_repr": "I will fix your JS issue",
+        "action_flag": 1,
+        "change_message": "Added."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 2,
+    "fields": {
+        "action_time": "2018-12-31T10:55:35.460Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "sixerrapp",
+            "gig"
+        ],
+        "object_id": "1",
+        "object_repr": "I will fix your JS issue",
+        "action_flag": 2,
+        "change_message": "Changed photo."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 3,
+    "fields": {
+        "action_time": "2018-12-31T10:56:02.840Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "sixerrapp",
+            "gig"
+        ],
+        "object_id": "1",
+        "object_repr": "I will fix your JS issue",
+        "action_flag": 2,
+        "change_message": "Changed photo."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 4,
+    "fields": {
+        "action_time": "2018-12-31T11:01:09.647Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "sixerrapp",
+            "gig"
+        ],
+        "object_id": "1",
+        "object_repr": "I will fix your JS issue",
+        "action_flag": 2,
+        "change_message": "Changed user."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 5,
+    "fields": {
+        "action_time": "2019-01-02T02:36:10.862Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "sixerrapp",
+            "gig"
+        ],
+        "object_id": "3",
+        "object_repr": "I will create a wedding invitation",
+        "action_flag": 2,
+        "change_message": "Changed photo."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 6,
+    "fields": {
+        "action_time": "2019-01-02T02:38:11.933Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "sixerrapp",
+            "gig"
+        ],
+        "object_id": "2",
+        "object_repr": "I will create a new tutorial in NodeJS",
+        "action_flag": 2,
+        "change_message": "Changed category and status."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 7,
+    "fields": {
+        "action_time": "2019-01-02T02:41:15.369Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "sixerrapp",
+            "gig"
+        ],
+        "object_id": "3",
+        "object_repr": "I will create a wedding invitation",
+        "action_flag": 2,
+        "change_message": "Changed description."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 8,
+    "fields": {
+        "action_time": "2019-01-02T02:42:49.089Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "sixerrapp",
+            "gig"
+        ],
+        "object_id": "3",
+        "object_repr": "I will create a wedding invitation",
+        "action_flag": 2,
+        "change_message": "Changed photo."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 9,
+    "fields": {
+        "action_time": "2019-01-02T02:53:30.674Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "sixerrapp",
+            "gig"
+        ],
+        "object_id": "3",
+        "object_repr": "Shark Dung's Portfolio",
+        "action_flag": 2,
+        "change_message": "Changed title and category."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 10,
+    "fields": {
+        "action_time": "2019-01-02T03:08:21.781Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "sixerrapp",
+            "gig"
+        ],
+        "object_id": "3",
+        "object_repr": "Shark Dung's Portfolio",
+        "action_flag": 2,
+        "change_message": "Changed description."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 11,
+    "fields": {
+        "action_time": "2019-01-02T03:13:51.003Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "sixerrapp",
+            "gig"
+        ],
+        "object_id": "3",
+        "object_repr": "Shark Dung's Portfolio",
+        "action_flag": 2,
+        "change_message": "Changed description."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 12,
+    "fields": {
+        "action_time": "2019-01-02T03:14:28.120Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "sixerrapp",
+            "gig"
+        ],
+        "object_id": "3",
+        "object_repr": "Shark Dung's Portfolio",
+        "action_flag": 2,
+        "change_message": "Changed description."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 13,
+    "fields": {
+        "action_time": "2019-01-02T03:14:59.861Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "sixerrapp",
+            "gig"
+        ],
+        "object_id": "3",
+        "object_repr": "Shark Dung's Portfolio",
+        "action_flag": 2,
+        "change_message": "Changed description."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 14,
+    "fields": {
+        "action_time": "2019-01-02T03:15:37.181Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "sixerrapp",
+            "gig"
+        ],
+        "object_id": "3",
+        "object_repr": "Shark Dung's Portfolio",
+        "action_flag": 2,
+        "change_message": "Changed description."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 15,
+    "fields": {
+        "action_time": "2019-01-02T03:23:25.797Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "sixerrapp",
+            "gig"
+        ],
+        "object_id": "3",
+        "object_repr": "Shark Dung's Portfolio",
+        "action_flag": 2,
+        "change_message": "Changed description."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 16,
+    "fields": {
+        "action_time": "2019-01-02T03:24:39.764Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "sixerrapp",
+            "gig"
+        ],
+        "object_id": "2",
+        "object_repr": "Elsa",
+        "action_flag": 2,
+        "change_message": "Changed title and description."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 17,
+    "fields": {
+        "action_time": "2019-01-02T03:25:42.482Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "sixerrapp",
+            "gig"
+        ],
+        "object_id": "2",
+        "object_repr": "Elsa",
+        "action_flag": 2,
+        "change_message": "Changed photo."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 18,
+    "fields": {
+        "action_time": "2019-01-02T03:27:49.485Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "sixerrapp",
+            "gig"
+        ],
+        "object_id": "1",
+        "object_repr": "Klara",
+        "action_flag": 2,
+        "change_message": "Changed title, category, description and status."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 19,
+    "fields": {
+        "action_time": "2019-01-02T03:28:05.719Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "sixerrapp",
+            "gig"
+        ],
+        "object_id": "1",
+        "object_repr": "Klara",
+        "action_flag": 2,
+        "change_message": "Changed photo."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 20,
+    "fields": {
+        "action_time": "2019-01-02T09:47:35.366Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "sixerrapp",
+            "gig"
+        ],
+        "object_id": "4",
+        "object_repr": "Ngo Bao Chau",
+        "action_flag": 1,
+        "change_message": "Added."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 21,
+    "fields": {
+        "action_time": "2019-01-02T09:57:58.655Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "sixerrapp",
+            "gig"
+        ],
+        "object_id": "5",
+        "object_repr": "a",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 22,
+    "fields": {
+        "action_time": "2019-01-02T10:07:42.152Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "sixerrapp",
+            "gig"
+        ],
+        "object_id": "6",
+        "object_repr": "PwC",
+        "action_flag": 2,
+        "change_message": "Changed title."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 23,
+    "fields": {
+        "action_time": "2019-01-02T10:07:53.529Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "sixerrapp",
+            "gig"
+        ],
+        "object_id": "6",
+        "object_repr": "FinTech Companies",
+        "action_flag": 2,
+        "change_message": "Changed title."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 24,
+    "fields": {
+        "action_time": "2019-01-02T10:08:20.965Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "sixerrapp",
+            "gig"
+        ],
+        "object_id": "4",
+        "object_repr": "Vinschool",
+        "action_flag": 2,
+        "change_message": "Changed title."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 25,
+    "fields": {
+        "action_time": "2019-01-02T10:08:36.353Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "sixerrapp",
+            "gig"
+        ],
+        "object_id": "3",
+        "object_repr": "Shark Dung's Companies",
+        "action_flag": 2,
+        "change_message": "Changed title."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 26,
+    "fields": {
+        "action_time": "2019-01-02T10:08:43.622Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "sixerrapp",
+            "gig"
+        ],
+        "object_id": "1",
+        "object_repr": "Vinfast",
+        "action_flag": 2,
+        "change_message": "Changed title."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 27,
+    "fields": {
+        "action_time": "2019-01-02T10:38:53.258Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "sixerrapp",
+            "company"
+        ],
+        "object_id": "1",
+        "object_repr": "Vinfast",
+        "action_flag": 1,
+        "change_message": "Added."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 28,
+    "fields": {
+        "action_time": "2019-01-02T10:39:40.774Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "sixerrapp",
+            "company"
+        ],
+        "object_id": "2",
+        "object_repr": "Tiki",
+        "action_flag": 1,
+        "change_message": "Added."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 29,
+    "fields": {
+        "action_time": "2019-01-02T11:01:32.338Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "sixerrapp",
+            "gig"
+        ],
+        "object_id": "3",
+        "object_repr": "Shark Dung's Companies",
+        "action_flag": 2,
+        "change_message": "Changed company."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 30,
+    "fields": {
+        "action_time": "2019-01-02T11:04:17.893Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "sixerrapp",
+            "company"
+        ],
+        "object_id": "3",
+        "object_repr": "Vinschool",
+        "action_flag": 1,
+        "change_message": "Added."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 31,
+    "fields": {
+        "action_time": "2019-01-02T11:05:09.468Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "sixerrapp",
+            "gig"
+        ],
+        "object_id": "4",
+        "object_repr": "Vinschool",
+        "action_flag": 2,
+        "change_message": "Changed company."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 32,
+    "fields": {
+        "action_time": "2019-01-02T11:06:14.599Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "sixerrapp",
+            "company"
+        ],
+        "object_id": "4",
+        "object_repr": "Elsa",
+        "action_flag": 1,
+        "change_message": "Added."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 33,
+    "fields": {
+        "action_time": "2019-01-02T11:06:29.598Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "sixerrapp",
+            "gig"
+        ],
+        "object_id": "2",
+        "object_repr": "Elsa",
+        "action_flag": 2,
+        "change_message": "Changed company."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 34,
+    "fields": {
+        "action_time": "2019-01-02T11:06:39.403Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "sixerrapp",
+            "gig"
+        ],
+        "object_id": "4",
+        "object_repr": "Education Trend",
+        "action_flag": 2,
+        "change_message": "Changed title."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 35,
+    "fields": {
+        "action_time": "2019-01-02T11:06:53.129Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "sixerrapp",
+            "gig"
+        ],
+        "object_id": "2",
+        "object_repr": "Elsa Featured",
+        "action_flag": 2,
+        "change_message": "Changed title."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 36,
+    "fields": {
+        "action_time": "2019-01-02T11:07:00.895Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "sixerrapp",
+            "gig"
+        ],
+        "object_id": "1",
+        "object_repr": "Klara",
+        "action_flag": 2,
+        "change_message": "Changed title."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 37,
+    "fields": {
+        "action_time": "2019-01-02T11:11:47.394Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "sixerrapp",
+            "gig"
+        ],
+        "object_id": "4",
+        "object_repr": "Education Trend",
+        "action_flag": 2,
+        "change_message": "Changed company."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 38,
+    "fields": {
+        "action_time": "2019-01-02T11:11:50.787Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "sixerrapp",
+            "gig"
+        ],
+        "object_id": "3",
+        "object_repr": "Shark Dung's Companies",
+        "action_flag": 2,
+        "change_message": "No fields changed."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 39,
+    "fields": {
+        "action_time": "2019-01-02T11:11:55.087Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "sixerrapp",
+            "gig"
+        ],
+        "object_id": "2",
+        "object_repr": "Elsa Featured",
+        "action_flag": 2,
+        "change_message": "No fields changed."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 40,
+    "fields": {
+        "action_time": "2019-01-02T11:12:00.523Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "sixerrapp",
+            "gig"
+        ],
+        "object_id": "1",
+        "object_repr": "Klara",
+        "action_flag": 2,
+        "change_message": "No fields changed."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 41,
+    "fields": {
+        "action_time": "2019-01-02T11:18:08.090Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "sixerrapp",
+            "gig"
+        ],
+        "object_id": "4",
+        "object_repr": "Education Trend",
+        "action_flag": 2,
+        "change_message": "Changed company."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 42,
+    "fields": {
+        "action_time": "2019-01-02T11:41:29.608Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "sixerrapp",
+            "gig"
+        ],
+        "object_id": "3",
+        "object_repr": "Shark Dung's Companies",
+        "action_flag": 2,
+        "change_message": "Changed description."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 43,
+    "fields": {
+        "action_time": "2019-01-02T11:41:34.879Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "sixerrapp",
+            "gig"
+        ],
+        "object_id": "6",
+        "object_repr": "FinTech Companies",
+        "action_flag": 2,
+        "change_message": "No fields changed."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 44,
+    "fields": {
+        "action_time": "2019-01-02T11:41:40.080Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "sixerrapp",
+            "gig"
+        ],
+        "object_id": "4",
+        "object_repr": "Education Trend",
+        "action_flag": 2,
+        "change_message": "No fields changed."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 45,
+    "fields": {
+        "action_time": "2019-01-02T11:41:57.935Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "sixerrapp",
+            "gig"
+        ],
+        "object_id": "4",
+        "object_repr": "Education Trend",
+        "action_flag": 2,
+        "change_message": "Changed description."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 46,
+    "fields": {
+        "action_time": "2019-01-02T11:42:12.436Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "sixerrapp",
+            "gig"
+        ],
+        "object_id": "2",
+        "object_repr": "Elsa Featured",
+        "action_flag": 2,
+        "change_message": "Changed description."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 47,
+    "fields": {
+        "action_time": "2019-01-02T11:42:19.276Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "sixerrapp",
+            "gig"
+        ],
+        "object_id": "1",
+        "object_repr": "Klara",
+        "action_flag": 2,
+        "change_message": "Changed description."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 48,
+    "fields": {
+        "action_time": "2019-01-03T03:50:40.151Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "sixerrapp",
+            "company"
+        ],
+        "object_id": "5",
+        "object_repr": "a",
+        "action_flag": 1,
+        "change_message": "Added."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 49,
+    "fields": {
+        "action_time": "2019-01-03T03:50:46.744Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "sixerrapp",
+            "company"
+        ],
+        "object_id": "5",
+        "object_repr": "a",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 50,
+    "fields": {
+        "action_time": "2019-01-03T03:51:13.416Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "sixerrapp",
+            "company"
+        ],
+        "object_id": "6",
+        "object_repr": "Vatgia",
+        "action_flag": 1,
+        "change_message": "Added."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 51,
+    "fields": {
+        "action_time": "2019-01-03T03:51:30.491Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "sixerrapp",
+            "gig"
+        ],
+        "object_id": "3",
+        "object_repr": "Shark Dung's Companies",
+        "action_flag": 2,
+        "change_message": "Changed company."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 52,
+    "fields": {
+        "action_time": "2019-01-03T03:51:48.426Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "sixerrapp",
+            "gig"
+        ],
+        "object_id": "4",
+        "object_repr": "Education Trend",
+        "action_flag": 2,
+        "change_message": "Changed company."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 53,
+    "fields": {
+        "action_time": "2019-01-03T03:51:54.032Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "sixerrapp",
+            "gig"
+        ],
+        "object_id": "2",
+        "object_repr": "Elsa Featured",
+        "action_flag": 2,
+        "change_message": "Changed company."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 54,
+    "fields": {
+        "action_time": "2019-01-03T03:51:59.459Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "sixerrapp",
+            "gig"
+        ],
+        "object_id": "1",
+        "object_repr": "Klara",
+        "action_flag": 2,
+        "change_message": "Changed company."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 55,
+    "fields": {
+        "action_time": "2019-01-03T04:03:17.106Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "sixerrapp",
+            "company"
+        ],
+        "object_id": "7",
+        "object_repr": "123Pay",
+        "action_flag": 1,
+        "change_message": "Added."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 56,
+    "fields": {
+        "action_time": "2019-01-03T04:03:34.535Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "sixerrapp",
+            "gig"
+        ],
+        "object_id": "6",
+        "object_repr": "FinTech Companies",
+        "action_flag": 2,
+        "change_message": "Changed company."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 57,
+    "fields": {
+        "action_time": "2019-01-06T23:39:52.483Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "sixerrapp",
+            "gig"
+        ],
+        "object_id": "6",
+        "object_repr": "FinTech Companies",
+        "action_flag": 2,
+        "change_message": "Changed description."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 58,
+    "fields": {
+        "action_time": "2019-01-06T23:39:59.248Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "sixerrapp",
+            "gig"
+        ],
+        "object_id": "4",
+        "object_repr": "Education Trend",
+        "action_flag": 2,
+        "change_message": "Changed status."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 59,
+    "fields": {
+        "action_time": "2019-01-06T23:40:13.548Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "sixerrapp",
+            "gig"
+        ],
+        "object_id": "3",
+        "object_repr": "Shark Dung's Companies",
+        "action_flag": 2,
+        "change_message": "Changed description."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 60,
+    "fields": {
+        "action_time": "2019-01-06T23:40:25.718Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "sixerrapp",
+            "gig"
+        ],
+        "object_id": "2",
+        "object_repr": "Elsa Featured",
+        "action_flag": 2,
+        "change_message": "Changed description."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 61,
+    "fields": {
+        "action_time": "2019-01-06T23:40:36.121Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "sixerrapp",
+            "gig"
+        ],
+        "object_id": "1",
+        "object_repr": "Klara",
+        "action_flag": 2,
+        "change_message": "Changed description."
+    }
+}
+]

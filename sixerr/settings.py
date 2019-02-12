@@ -80,8 +80,14 @@ WSGI_APPLICATION = 'sixerr.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        #'ENGINE': 'django.db.backends.sqlite3',
+        #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'taskbuster_db',
+        'USER': 'admin',
+        'PASSWORD': '20110807',
+        'HOST': '',
+        'PORT': '',
     }
 }
 
@@ -162,3 +168,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 #SOCIAL_AUTH_REDIRECT_IS_HTTPS = True
+SECURE_SSL_REDIRECT=False
