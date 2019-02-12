@@ -85,7 +85,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'taskbuster_db',
         'USER': 'admin',
-        'PASSWORD': '20110807',
+        'PASSWORD': 'Jj211%8789',
         'HOST': 'ec2-23-21-171-25.compute-1.amazonaws.com',
         'PORT': '5432',
     }
