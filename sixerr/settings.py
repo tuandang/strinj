@@ -86,8 +86,8 @@ DATABASES = {
         'NAME': 'taskbuster_db',
         'USER': 'admin',
         'PASSWORD': '20110807',
-        'HOST': 'postgres://ejlggtgioflbvb:676afb6b7d92553770601552e14e63e0020c9f233c5df03daf1f66c18bd031c7@ec2-23-21-171-25.compute-1.amazonaws.com',
-        'PORT': '5432/dblm45j7jeqk99',
+        'HOST': 'ec2-23-21-171-25.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
