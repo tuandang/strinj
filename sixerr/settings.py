@@ -84,10 +84,10 @@ DATABASES = {
         #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'taskbuster_db',
-        'USER': 'admin',
-        'PASSWORD': '20110807',
-        'HOST': '',
-        'PORT': '',
+        'USER': 'obftwydmyouolm',
+        'PASSWORD': 'fecdfeafd0599e18275bb8f3e78f957b975287acf81430f110e49ed2c8d6f383',
+        'HOST': 'ec2-107-20-183-142.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
