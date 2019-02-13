@@ -28,7 +28,7 @@ DEBUG = True
 ALLOWED_HOSTS = ['www.strinj.com']
 
 
-# Application definition
+# Application definitions
 
 INSTALLED_APPS = [
     'django.contrib.admin',
