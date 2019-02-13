@@ -89,10 +89,10 @@ DATABASES = {
         #'PASSWORD': 'fecdfeafd0599e18275bb8f3e78f957b975287acf81430f110e49ed2c8d6f383',
         #'HOST': 'ec2-107-20-183-142.compute-1.amazonaws.com',
         # production
-        'NAME': 'd1mb4o6938tdc8',
-        'USER': 'plomcfxkdckhfh',
-        'PASSWORD': 'de9afbc5ceab31bd0a8939e6c86c81e23f613ccf86fc9747474d660aaca6d5ee',
-        'HOST': 'ec2-54-235-178-189.compute-1.amazonaws.com',
+        'NAME': 'dfpnshb2d1pqps',
+        'USER': 'rkgvbcryobnodg',
+        'PASSWORD': '1bd423510021bf6a588233f41af95070e3908ef81587afdbbc43904a2726562f',
+        'HOST': 'ec2-107-20-167-11.compute-1.amazonaws.com',
         'PORT': '5432',
     }
 }
