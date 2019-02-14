@@ -96,7 +96,7 @@ DATABASES = {
         #'USER': 'obftwydmyouolm',
         #'PASSWORD': 'fecdfeafd0599e18275bb8f3e78f957b975287acf81430f110e49ed2c8d6f383',
         #'HOST': 'ec2-107-20-183-142.compute-1.amazonaws.com',
-        
+
         # prod env
         'NAME': 'dfpnshb2d1pqps',
         'USER': 'rkgvbcryobnodg',
@@ -180,7 +180,7 @@ DATABASES['default'].update(db_from_env)
 
 # setup upload directory for Gig model
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'
+MEDIA_URL = 'https://cloud-cube.s3.amazonaws.com/ov6lbnrabqfyov6lbnrabqfy/public/media/'
 
 #SOCIAL_AUTH_REDIRECT_IS_HTTPS = True
 SECURE_SSL_REDIRECT=False
