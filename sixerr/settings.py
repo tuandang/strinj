@@ -146,20 +146,25 @@ USE_TZ = True
 
 #STATIC_URL = '/static/'
 
+# https://cloud-cube.s3.amazonaws.com/ov6lbnrabqfyov6lbnrabqfy/public/media/gigs/12-vinfast-klara-c64f.jpg
 AWS_ACCESS_KEY_ID = 'AKIAI5LF3MSVQEWM7GQA'
 AWS_SECRET_ACCESS_KEY = '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'
 AWS_STORAGE_BUCKET_NAME = 'cloud-cube'
-# AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
-# AWS_S3_OBJECT_PARAMETERS = {
-#     'CacheControl': 'max-age=86400',
-# }
-# AWS_LOCATION = 'static'
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+AWS_S3_OBJECT_PARAMETERS = {
+    'CacheControl': 'max-age=86400',
+}
+AWS_LOCATION = 'ov6lbnrabqfyov6lbnrabqfy/public/media'
 #
 # STATICFILES_DIRS = [
 #     os.path.join(BASE_DIR, 'mysite/static'),
 # ]
-# STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
+STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+
+
+
 
 # to serve static files on Heroku
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
