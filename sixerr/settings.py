@@ -154,11 +154,11 @@ AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 AWS_S3_OBJECT_PARAMETERS = {
     'CacheControl': 'max-age=86400',
 }
-AWS_LOCATION = 'ov6lbnrabqfyov6lbnrabqfy/public/media'
-#
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR, 'mysite/static'),
-# ]
+AWS_LOCATION = 'ov6lbnrabqfyov6lbnrabqfy/public/media/static'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'sixerr/static'),
+]
 STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
