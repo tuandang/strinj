@@ -144,7 +144,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = '/media/'
 
 # https://cloud-cube.s3.amazonaws.com/ov6lbnrabqfyov6lbnrabqfy/public/media/gigs/12-vinfast-klara-c64f.jpg
 AWS_ACCESS_KEY_ID = 'AKIAJANLPSSLEWPMVSDA'
