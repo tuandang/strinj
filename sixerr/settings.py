@@ -154,7 +154,7 @@ AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 AWS_S3_OBJECT_PARAMETERS = {
     'CacheControl': 'max-age=86400',
 }
-AWS_LOCATION = 'ov6lbnrabqfyov6lbnrabqfy/public/media/static'
+AWS_LOCATION = 'static'
 
 # STATICFILES_DIRS = [
 #     os.path.join(BASE_DIR, 'sixerr/static'),
@@ -201,8 +201,8 @@ DATABASES['default'].update(db_from_env)
 
 # setup upload directory for Gig model
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = 'https://cloud-cube.s3.amazonaws.com/ov6lbnrabqfy/'
-AWS_DEFAULT_ACL = None
+MEDIA_URL = 'https://cloud-cube.s3.amazonaws.com/ov6lbnrabqfyov6lbnrabqfy/public/media/'
+
 #SOCIAL_AUTH_REDIRECT_IS_HTTPS = True
 SECURE_SSL_REDIRECT=False
 
