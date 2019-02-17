@@ -201,7 +201,7 @@ DATABASES['default'].update(db_from_env)
 
 # setup upload directory for Gig model
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = 'https://cloud-cube.s3.amazonaws.com/ov6lbnrabqfyov6lbnrabqfy/public/'
+MEDIA_URL = 'https://cloud-cube.s3.amazonaws.com/ov6lbnrabqfy/'
 AWS_DEFAULT_ACL = None
 #SOCIAL_AUTH_REDIRECT_IS_HTTPS = True
 SECURE_SSL_REDIRECT=False
