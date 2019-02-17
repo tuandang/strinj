@@ -200,3 +200,10 @@ MEDIA_URL = 'https://cloud-cube.s3.amazonaws.com/ov6lbnrabqfyov6lbnrabqfy/public
 
 #SOCIAL_AUTH_REDIRECT_IS_HTTPS = True
 SECURE_SSL_REDIRECT=False
+
+try:
+    from local_settings import *
+except ImportError:
+    pass
+
+assert len(SECRET_KEY) > 20, 'Please set SECRET_KEY in local_settings.py'

@@ -79,6 +79,7 @@ def profile(request, username):
         profile = Profile.objects.get(user=request.user)
         profile.about = request.POST['about']
         profile.slogan = request.POST['slogan']
+        profile.resume = request.POST['resume']
         profile.save()
     else:
         try:
@@ -89,6 +90,16 @@ def profile(request, username):
     gigs = Gig.objects.filter(user=profile.user, status=True)
     return render(request, 'profile.html', {"profile": profile, "gigs": gigs})
 
+def create_profile(request):
+    if request.method == 'POST':
+        form = ProfileForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(reverse('created'))
+    else:
+        form = ProfileForm()
+
+    return render(request, 'profile.html',{'form':form})
 
 
 @login_required(login_url="/")
