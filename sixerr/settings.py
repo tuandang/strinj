@@ -147,9 +147,9 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # https://cloud-cube.s3.amazonaws.com/ov6lbnrabqfyov6lbnrabqfy/public/media/gigs/12-vinfast-klara-c64f.jpg
-AWS_ACCESS_KEY_ID = 'AKIAI7YGDB6ZWOOSODDQ'
-AWS_SECRET_ACCESS_KEY = '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'
-AWS_STORAGE_BUCKET_NAME = 'cloud-cube'
+AWS_ACCESS_KEY_ID = 'AKIAJANLPSSLEWPMVSDA'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'bucketeer-935c55d6-c0d5-4764-ad10-72daed5b3527'
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 AWS_S3_OBJECT_PARAMETERS = {
     'CacheControl': 'max-age=86400',
