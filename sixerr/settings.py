@@ -144,7 +144,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
-#STATIC_URL = '/static/'
+STATIC_URL = '/static/'
 
 # https://cloud-cube.s3.amazonaws.com/ov6lbnrabqfyov6lbnrabqfy/public/media/gigs/12-vinfast-klara-c64f.jpg
 AWS_ACCESS_KEY_ID = 'AKIAI5LF3MSVQEWM7GQA'
@@ -159,7 +159,7 @@ AWS_LOCATION = 'ov6lbnrabqfyov6lbnrabqfy/public/media/static'
 # STATICFILES_DIRS = [
 #     os.path.join(BASE_DIR, 'sixerr/static'),
 # ]
-STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
+#STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 
