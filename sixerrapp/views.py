@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 
-from .models import Gig, Profile, Review, Company
+from .models import Gig, Profile, Company
 from .forms import GigForm
 
 
@@ -12,26 +12,15 @@ def home(request):
     return render(request, 'home.html', {"gigs": gigs})
 
 def gig_detail(request, id):
-    if request.method == 'POST' and \
-        not request.user.is_anonymous() and \
-        'content' in request.POST and \
-        request.POST['content'].strip() != '':
-        Review.objects.create(content=request.POST['content'], gig_id=id, user=request.user)
-
     try:
         gig = Gig.objects.get(id=id)
     except Gig.DoesNotExist:
         return redirect('/')
 
-    if request.user.is_anonymous() or \
-        Review.objects.filter(gig=gig, user=request.user).count() > 0:
-        show_post_review = False
-    else:
-        show_post_review = True
 
-    reviews = Review.objects.filter(gig=gig)
+
     companies = Company.objects.filter(gig=gig)
-    return render(request, 'gig_detail.html', {"show_post_review": show_post_review ,"reviews": reviews, "companies": companies, "gig": gig})
+    return render(request, 'gig_detail.html', {"companies": companies, "gig": gig})
 
 @login_required(login_url="/")
 def create_gig(request):
