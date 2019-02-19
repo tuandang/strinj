@@ -99,11 +99,11 @@ DATABASES = {
         #'HOST': 'ec2-107-20-183-142.compute-1.amazonaws.com',
 
         # prod env
-        'NAME': 'dfpnshb2d1pqps',
-        'USER': 'rkgvbcryobnodg',
-        'PASSWORD': '1bd423510021bf6a588233f41af95070e3908ef81587afdbbc43904a2726562f',
-        'HOST': 'ec2-107-20-167-11.compute-1.amazonaws.com',
-        'PORT': '5432',
+        'NAME': os.environ['HEROKU_POSTGRESQL_NAME'],
+        'USER': os.environ['HEROKU_POSTGRESQL_USER'],
+        'PASSWORD': os.environ['HEROKU_POSTGRESQL_PW'],
+        'HOST': os.environ['HEROKU_POSTGRESQL_HOST'],
+        'PORT': os.environ['HEROKU_POSTGRESQL_PORT'],
     }
 }
 
