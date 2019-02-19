@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 
-from .models import Gig, Profile, Purchase, Review, Company
+from .models import Gig, Profile, Company
 from .forms import GigForm
 
 
@@ -12,28 +12,15 @@ def home(request):
     return render(request, 'home.html', {"gigs": gigs})
 
 def gig_detail(request, id):
-    if request.method == 'POST' and \
-        not request.user.is_anonymous() and \
-        Purchase.objects.filter(gig_id=id, buyer=request.user).count() > 0 and \
-        'content' in request.POST and \
-        request.POST['content'].strip() != '':
-        Review.objects.create(content=request.POST['content'], gig_id=id, user=request.user)
-
     try:
         gig = Gig.objects.get(id=id)
     except Gig.DoesNotExist:
         return redirect('/')
 
-    if request.user.is_anonymous() or \
-        Purchase.objects.filter(gig=gig, buyer=request.user).count() == 0 or \
-        Review.objects.filter(gig=gig, user=request.user).count() > 0:
-        show_post_review = False
-    else:
-        show_post_review = Purchase.objects.filter(gig=gig, buyer=request.user).count() > 0
 
-    reviews = Review.objects.filter(gig=gig)
+
     companies = Company.objects.filter(gig=gig)
-    return render(request, 'gig_detail.html', {"show_post_review": show_post_review ,"reviews": reviews, "companies": companies, "gig": gig})
+    return render(request, 'gig_detail.html', {"companies": companies, "gig": gig})
 
 @login_required(login_url="/")
 def create_gig(request):
@@ -100,17 +87,6 @@ def create_profile(request):
         form = ProfileForm()
 
     return render(request, 'profile.html',{'form':form})
-
-
-@login_required(login_url="/")
-def my_sellings(request):
-    purchases = Purchase.objects.filter(gig__user=request.user)
-    return render(request, 'my_sellings.html', {"purchases": purchases})
-
-@login_required(login_url="/")
-def my_buyings(request):
-    purchases = Purchase.objects.filter(buyer=request.user)
-    return render(request, 'my_buyings.html', {"purchases": purchases})
 
 def category(request, link):
     categories = {
