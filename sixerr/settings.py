@@ -92,12 +92,6 @@ DATABASES = {
         # 'HOST': '',
         # 'PORT': '',
 
-        # stage env
-        #'NAME': 'd3uhf593uqe6h1',
-        #'USER': 'obftwydmyouolm',
-        #'PASSWORD': 'fecdfeafd0599e18275bb8f3e78f957b975287acf81430f110e49ed2c8d6f383',
-        #'HOST': 'ec2-107-20-183-142.compute-1.amazonaws.com',
-
         # prod env
         'NAME': os.environ['HEROKU_POSTGRESQL_NAME'],
         'USER': os.environ['HEROKU_POSTGRESQL_USER'],
