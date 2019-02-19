@@ -150,10 +150,10 @@ STATIC_URL = '/static/'
 #AWS_SECRET_ACCESS_KEY = 'fNDw3FkbBPxd1oEEd1Fp0Xmc3I37EeqIdbKKtjQP'
 #AWS_STORAGE_BUCKET_NAME = 'bucketeer-935c55d6-c0d5-4764-ad10-72daed5b3527'
 #AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
-AWS_S3_OBJECT_PARAMETERS = {
-    'CacheControl': 'max-age=86400',
-}
-AWS_LOCATION = 'media'
+# AWS_S3_OBJECT_PARAMETERS = {
+#     'CacheControl': 'max-age=86400',
+# }
+# AWS_LOCATION = 'media'
 
 # STATICFILES_DIRS = [
 #     os.path.join(BASE_DIR, 'sixerr/static'),
