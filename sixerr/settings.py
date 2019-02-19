@@ -146,9 +146,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-AWS_ACCESS_KEY_ID = 'AKIAIIDAPA6B5NHXGHCQ'
-AWS_SECRET_ACCESS_KEY = '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'
-AWS_STORAGE_BUCKET_NAME = 'bucketeer-935c55d6-c0d5-4764-ad10-72daed5b3527'
+#AWS_ACCESS_KEY_ID = 'AKIAJRYSH7FQQNZO63OQ'
+#AWS_SECRET_ACCESS_KEY = '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'
+#AWS_STORAGE_BUCKET_NAME = 'bucketeer-935c55d6-c0d5-4764-ad10-72daed5b3527'
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 AWS_S3_OBJECT_PARAMETERS = {
     'CacheControl': 'max-age=86400',
@@ -192,7 +192,7 @@ SOCIAL_AUTH_PIPELINE = (
     'social_core.pipeline.user.user_details',
 )
 
-# replace database settings to use posgress on Heroky
+# replace database settings to use posgress on Heroku
 import dj_database_url
 db_from_env = dj_database_url.config()
 DATABASES['default'].update(db_from_env)
