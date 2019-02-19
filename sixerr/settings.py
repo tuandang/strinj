@@ -168,7 +168,7 @@ DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 # to serve static files on Heroku
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
+print (STATIC_ROOT)
 AUTHENTICATION_BACKENDS = (
     'social_core.backends.facebook.FacebookOAuth2',
     'django.contrib.auth.backends.ModelBackend'
@@ -201,7 +201,7 @@ DATABASES['default'].update(db_from_env)
 
 # setup upload directory for Gig model
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-print MEDIA_ROOT
+print (MEDIA_ROOT)
 MEDIA_URL = 'https://bucketeer-935c55d6-c0d5-4764-ad10-72daed5b3527.s3.amazonaws.com/media/'
 
 #SOCIAL_AUTH_REDIRECT_IS_HTTPS = True
