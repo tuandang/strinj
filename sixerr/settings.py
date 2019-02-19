@@ -193,7 +193,6 @@ DATABASES['default'].update(db_from_env)
 #MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 #MEDIA_URL = 'https://bucketeer-935c55d6-c0d5-4764-ad10-72daed5b3527.s3.amazonaws.com/media/'
 
-#SOCIAL_AUTH_REDIRECT_IS_HTTPS = True
 SECURE_SSL_REDIRECT=False
 
 try:
