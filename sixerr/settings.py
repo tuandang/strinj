@@ -144,7 +144,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
-STATIC_URL = '/media/'
+STATIC_URL = '/static/'
 
 # https://cloud-cube.s3.amazonaws.com/ov6lbnrabqfyov6lbnrabqfy/public/media/gigs/12-vinfast-klara-c64f.jpg
 AWS_ACCESS_KEY_ID = 'AKIAIIDAPA6B5NHXGHCQ'
@@ -201,7 +201,8 @@ DATABASES['default'].update(db_from_env)
 
 # setup upload directory for Gig model
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = 'https://cloud-cube.s3.amazonaws.com/ov6lbnrabqfyov6lbnrabqfy/public/media/'
+print MEDIA_ROOT
+MEDIA_URL = 'https://bucketeer-935c55d6-c0d5-4764-ad10-72daed5b3527.s3.amazonaws.com/media/'
 
 #SOCIAL_AUTH_REDIRECT_IS_HTTPS = True
 SECURE_SSL_REDIRECT=False
