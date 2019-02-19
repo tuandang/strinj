@@ -77,12 +77,10 @@ WSGI_APPLICATION = 'sixerr.wsgi.application'
 
 
 # Database
-# https://docs.djangoproject.com/en/1.9/ref/settings/#databasess
+# https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
 DATABASES = {
     'default': {
-        #'ENGINE': 'django.db.backends.sqlite3',
-        #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
 
         # local env
@@ -91,12 +89,6 @@ DATABASES = {
         # 'PASSWORD': '20110807',
         # 'HOST': '',
         # 'PORT': '',
-
-        # stage env
-        #'NAME': 'd3uhf593uqe6h1',
-        #'USER': 'obftwydmyouolm',
-        #'PASSWORD': 'fecdfeafd0599e18275bb8f3e78f957b975287acf81430f110e49ed2c8d6f383',
-        #'HOST': 'ec2-107-20-183-142.compute-1.amazonaws.com',
 
         # prod env
         'NAME': os.environ['HEROKU_POSTGRESQL_NAME'],
@@ -141,7 +133,7 @@ USE_L10N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
+# Static files (CSS, JavaScript, Image)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
