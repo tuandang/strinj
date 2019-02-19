@@ -101,7 +101,7 @@ DATABASES = {
         # prod env
         'NAME': os.environ['HEROKU_POSTGRESQL_NAME'],
         'USER': os.environ['HEROKU_POSTGRESQL_USER'],
-        'PASSWORD': os.environ['HEROKU_POSTGRESQL_PW'],
+        'PASSWORD': 'oh',
         'HOST': os.environ['HEROKU_POSTGRESQL_HOST'],
         'PORT': os.environ['HEROKU_POSTGRESQL_PORT'],
     }
