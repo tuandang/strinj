@@ -25,7 +25,7 @@ SECRET_KEY = 'erxyb&&yjj9)y*4ju25rg%xsz@ob!j*-^-i-tp_+=hk@szrys@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['www.strinj.com']
+ALLOWED_HOSTS = ['www.strinj.com', 'localhost']
 
 
 # Application definition
@@ -79,25 +79,6 @@ WSGI_APPLICATION = 'sixerr.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-
-        # local env
-        # 'NAME': 'taskbuster_db',
-        # 'USER': 'admin',
-        # 'PASSWORD': '20110807',
-        # 'HOST': '',
-        # 'PORT': '',
-
-        # prod env
-        'NAME': os.environ['HEROKU_POSTGRESQL_NAME'],
-        'USER': os.environ['HEROKU_POSTGRESQL_USER'],
-        'PASSWORD': os.environ['HEROKU_POSTGRESQL_PW'],
-        'HOST': os.environ['HEROKU_POSTGRESQL_HOST'],
-        'PORT': os.environ['HEROKU_POSTGRESQL_PORT'],
-    }
-}
 
 
 # Password validation
@@ -138,20 +119,56 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-AWS_ACCESS_KEY_ID = os.environ['BUCKETEER_AWS_ACCESS_KEY_ID']
-AWS_SECRET_ACCESS_KEY = os.environ['BUCKETEER_AWS_SECRET_ACCESS_KEY']
-AWS_STORAGE_BUCKET_NAME = os.environ['BUCKETEER_BUCKET_NAME']
-AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+# load variables from local if it's a local env
+if 'BUCKETEER_AWS_ACCESS_KEY_ID' not in os.environ:
+    try:
+        from local_settings import *
+    except ImportError:
+        print 'import settings problem!'
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    }
+}
+
+
+# prod env
+if 'BUCKETEER_AWS_ACCESS_KEY_ID' in os.environ:
+    DATABASES['default']['NAME'] = os.environ['HEROKU_POSTGRESQL_NAME']
+    DATABASES['default']['USER'] = os.environ['HEROKU_POSTGRESQL_USER']
+    DATABASES['default']['PASSWORD'] = os.environ['HEROKU_POSTGRESQL_PW']
+    DATABASES['default']['HOST'] = os.environ['HEROKU_POSTGRESQL_HOST']
+    DATABASES['default']['PORT'] = os.environ['HEROKU_POSTGRESQL_PORT']
+    AWS_ACCESS_KEY_ID = os.environ['BUCKETEER_AWS_ACCESS_KEY_ID']
+    AWS_SECRET_ACCESS_KEY = os.environ['BUCKETEER_AWS_SECRET_ACCESS_KEY']
+    AWS_STORAGE_BUCKET_NAME = os.environ['BUCKETEER_BUCKET_NAME']
+# local
+else:
+    DATABASES['default']['NAME'] = HEROKU_POSTGRESQL_NAME_LC
+    DATABASES['default']['USER'] = HEROKU_POSTGRESQL_USER_LC
+    DATABASES['default']['PASSWORD'] = HEROKU_POSTGRESQL_PW_LC
+    DATABASES['default']['HOST'] = HEROKU_POSTGRESQL_HOST_LC
+    DATABASES['default']['PORT'] = HEROKU_POSTGRESQL_PORT_LC
+    AWS_ACCESS_KEY_ID = BUCKETEER_AWS_ACCESS_KEY_ID_LC
+    AWS_SECRET_ACCESS_KEY = BUCKETEER_AWS_SECRET_ACCESS_KEY_LC
+    AWS_STORAGE_BUCKET_NAME = BUCKETEER_BUCKET_NAME_LC
+
 AWS_S3_OBJECT_PARAMETERS = {
     'CacheControl': 'max-age=86400',
 }
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 AWS_LOCATION = 'media'
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
+########## to be deleted ##########################################
 # STATICFILES_DIRS = [
 #     os.path.join(BASE_DIR, 'sixerr/static'),
 # ]
-#STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+# STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
+########## to be deleted ##########################################
+
+
 
 
 
@@ -195,9 +212,6 @@ DATABASES['default'].update(db_from_env)
 
 SECURE_SSL_REDIRECT=False
 
-try:
-    from local_settings import *
-except ImportError:
-    pass
+
 
 assert len(SECRET_KEY) > 20, 'Please set SECRET_KEY in local_settings.py'
