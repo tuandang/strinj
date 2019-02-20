@@ -124,7 +124,7 @@ if 'BUCKETEER_AWS_ACCESS_KEY_ID' not in os.environ:
     try:
         from local_settings import *
     except ImportError:
-        print 'import settings problem!'
+        pass
 
 DATABASES = {
     'default': {
