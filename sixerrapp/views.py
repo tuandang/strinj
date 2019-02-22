@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.forms import UserCreationForm
 
 from .models import Gig, Profile, Company
 from .forms import GigForm
@@ -105,3 +106,16 @@ def category(request, link):
 def search(request):
     gigs = Gig.objects.filter(title__contains=request.GET['title'])
     return render(request, 'home.html', {'gigs': gigs})
+
+def register(request):
+    # if sending data to server
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/profile')
+    else:
+        form = UserCreationForm()
+
+        args = {'form': form}
+        return render(request, 'reg_form.html', args)
