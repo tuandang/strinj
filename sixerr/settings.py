@@ -135,11 +135,12 @@ DATABASES = {
 
 # prod env
 if 'BUCKETEER_AWS_ACCESS_KEY_ID' in os.environ:
-    DATABASES['default']['NAME'] = os.environ['HEROKU_POSTGRESQL_NAME']
-    DATABASES['default']['USER'] = os.environ['HEROKU_POSTGRESQL_USER']
-    DATABASES['default']['PASSWORD'] = os.environ['HEROKU_POSTGRESQL_PW']
-    DATABASES['default']['HOST'] = os.environ['HEROKU_POSTGRESQL_HOST']
-    DATABASES['default']['PORT'] = os.environ['HEROKU_POSTGRESQL_PORT']
+    DATABASES['default']['DATABASE_URL'] = os.environ['DATABASE_URL']
+    # DATABASES['default']['NAME'] = os.environ['HEROKU_POSTGRESQL_NAME']
+    # DATABASES['default']['USER'] = os.environ['HEROKU_POSTGRESQL_USER']
+    # DATABASES['default']['PASSWORD'] = os.environ['HEROKU_POSTGRESQL_PW']
+    # DATABASES['default']['HOST'] = os.environ['HEROKU_POSTGRESQL_HOST']
+    # DATABASES['default']['PORT'] = os.environ['HEROKU_POSTGRESQL_PORT']
     AWS_ACCESS_KEY_ID = os.environ['BUCKETEER_AWS_ACCESS_KEY_ID']
     AWS_SECRET_ACCESS_KEY = os.environ['BUCKETEER_AWS_SECRET_ACCESS_KEY']
     AWS_STORAGE_BUCKET_NAME = os.environ['BUCKETEER_BUCKET_NAME']
