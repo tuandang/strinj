@@ -58,12 +58,12 @@
                 </ul>
               </li>
             {% else %}
-              <li>
-                <a style="color:#FFA500;" href="{% url 'social:begin' 'facebook' %}?next={{request.path}}">Login with Facebook</a>
-              </li>
+
+                <a class="btn btn-success" href="{% url 'login' %}">Login</a>
+                <a class="btn btn-success" href="{% url 'register' %}">Sign Up</a>
             {% endif %}
           </ul>
-        </div>
+      </div>
     </nav>
     <div id="body">
       <div class="container">

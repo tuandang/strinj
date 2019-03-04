@@ -1,0 +1,23 @@
+{% extends "base_sisu.html" %}
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+
+{% block page %}
+    <br/>
+    <form role="form" style="color:#FF6347;font-family:Helvetica Neue"
+          action="{% url 'login' %}"
+          method="post">
+        {% csrf_token %}
+
+        {{ form | crispy}}
+        <br/>
+        <button type="submit" class="btn btn-success">Sign in</button>
+        <hr/>
+        OR
+        <hr/>
+        <a class="btn btn-success" href="{% url 'social:begin' 'facebook' %}?next={{request.path}}">Login with Facebook</a>
+
+    </form>
+    <br/>
+
+{% endblock %}

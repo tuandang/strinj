@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
+from django import forms
 
 from .models import Gig, Profile, Company
 from .forms import GigForm
@@ -113,9 +114,18 @@ def register(request):
         form = UserCreationForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('/profile')
+            return redirect('/login/')
     else:
         form = UserCreationForm()
 
         args = {'form': form}
         return render(request, 'reg_form.html', args)
+
+class UserCreateForm(UserCreationForm):
+    email = forms.EmailField(required=True)
+
+    def __init__(self, *args, **kwargs):
+        super(UserCreateForm, self).__init__(*args, **kwargs)
+
+        for fieldname in ['username', 'password1', 'password2']:
+            self.fields[fieldname].help_text = None

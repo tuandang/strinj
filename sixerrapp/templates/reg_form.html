@@ -1,13 +1,16 @@
-{% extends 'base.html' %}
+{% extends 'base_sisu.html' %}
+{% load crispy_forms_tags %}
+
 {% load staticfiles %}
 
 {% block page %}
-<div class="container">
-  <form method="post">
+  <br/>
+  <form method="post" style="color:#FF6347;font-family:Helvetica Neue">
     {% csrf_token %}
-    {{ form.as_p}}
-    <button type="submit">Submit</button>
+    {{ form | crispy}}
+    <br/>
+    <button type="submit" class="btn btn-success">Register</button>
   </form>
-</div>
 
+  <br/>
 {% endblock %}

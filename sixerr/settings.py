@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'sixerrapp',
     'social_django',
-    'storages'
+    'storages',
+    'crispy_forms',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -174,9 +175,10 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend'
 )
 
-#LOGIN_REDIRECT_URL = 'https://cryptic-brook-75782.herokuapp.com/social/complete/facebook/'
 
 LOGIN_REDIRECT_URL = '/'
+
+CRISPY_TEMPLATE_PACK='bootstrap3'
 
 SOCIAL_AUTH_FACEBOOK_KEY = '269842407020498'
 SOCIAL_AUTH_FACEBOOK_SECRET = '7f7de15749491e53643250916e93bf01'

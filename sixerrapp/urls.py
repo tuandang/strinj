@@ -1,5 +1,6 @@
 from django.conf.urls import url
 from sixerrapp import views
+from django.contrib.auth.views import LoginView, LogoutView
 
 urlpatterns = [
     url(r'^$', views.home, name='home'),
@@ -11,4 +12,7 @@ urlpatterns = [
     url(r'^category/(?P<link>[\w|-]+)/$', views.category, name='category'),
     url(r'^search/$', views.search, name='search'),
     url(r'^register/$', views.register, name='register'),
+    url(r'^login/$',
+        LoginView.as_view(template_name="login_form.html"),
+        name="login"),
 ]
