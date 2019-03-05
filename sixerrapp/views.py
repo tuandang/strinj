@@ -68,7 +68,7 @@ def profile(request, username):
         profile = Profile.objects.get(user=request.user)
         profile.about = request.POST['about']
         #profile.slogan = request.POST['slogan']
-        #profile.resume = request.POST['resume']
+        profile.resume = request.POST['resume']
         profile.save()
     else:
         try:
