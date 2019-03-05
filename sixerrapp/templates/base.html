@@ -58,6 +58,7 @@
                 </ul>
               </li>
             {% else %}
+            <a class="btn btn-success" href="{% url 'social:begin' 'facebook' %}?next={{request.path}}">Login with Facebook</a>
 
                 <a class="btn btn-success" href="{% url 'login' %}">Login</a>
                 <a class="btn btn-success" href="{% url 'register' %}">Sign Up</a>
