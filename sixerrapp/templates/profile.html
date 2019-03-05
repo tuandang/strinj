@@ -36,24 +36,4 @@
     </div>
   {% endif %}
 
-  <h3 class="text-uppercase" style="margin-top:50px"><b>{{profile.user.username}}'s stories</b></h3>
-  <div class="row">
-    {% for gig in gigs %}
-      <div class="col-md-3">
-        <div class="thumbnail">
-          <a href="{% url 'gig_detail' gig.id %}">
-            <img src="https://bucketeer-935c55d6-c0d5-4764-ad10-72daed5b3527.s3.amazonaws.com/media/{{gig.photo}}">
-          </a>
-          <div class="caption">
-            <p><a href="{% url 'gig_detail' gig.id %}">{{gig.title}}</a></p>
-            <p>
-              <span>
-                <a href="{% url 'profile' gig.user.username %}">{{gig.user.username}}</a>
-              </span>
-            </p>
-          </div>
-        </div>
-      </div>
-    {% endfor %}
-  </div>
 {% endblock %}
