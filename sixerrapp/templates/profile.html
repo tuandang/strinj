@@ -3,6 +3,7 @@
 
 {% block page %}
   {% if request.user == profile.user %}
+    <br/>
     <form method="POST">
       {% csrf_token %%}
       <div class="panel panel-default">
