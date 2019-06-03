@@ -12,11 +12,14 @@
           <hr>
           <a href="{{ profile.resume.url}}" class="btn btn-success" target="_blank">View Your Resume</a>
           <hr>
-          <input class="form-control" name="about" value="{{profile.about}}">
+          <!-- <input class="form-control" name="about" value="{{profile.about}}"> -->
           <input class="form-control" name="about" value="{{profile.resume}}">
           <br>
-
-          <button class="btn btn-success" type="submit">Update</button>
+          Update your resume
+          <form method="POST" action='{% url "profile" username=request.user %}'>
+            <input type="file" name="resume">
+            <button class="btn btn-success" type="submit">Upload</button>
+          </form>
         </div>
       </div>
     </form>
@@ -32,6 +35,12 @@
         <h3 class="text-uppercase"><b>About {{profile.user.username}}</b></h3>
         <hr>
         <p>{{profile.about}}</p>
+
+        Upload your resume
+        <form method="POST" action='{% url "profile" username=request.user %}'>
+          <input type="file" name="resume">
+          <button class="btn btn-success" type="submit">Upload</button>
+        </form>
       </div>
     </div>
   {% endif %}
