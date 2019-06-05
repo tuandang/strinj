@@ -10,14 +10,19 @@
         <div class="panel-body">
           <img src="{{profile.avatar}}" class="img-circle" height="120" width="120">
           <hr>
-          <a href="{{ profile.resume.url}}" class="btn btn-success" target="_blank">View Your Resume</a>
+          <b>About you</b>
+          <input class="form-control" name="about" value="{{profile.about}}">
           <hr>
-          <!-- <input class="form-control" name="about" value="{{profile.about}}"> -->
+          <b>Your resume</b>
           <input class="form-control" name="about" value="{{profile.resume}}">
           <br>
-          Update your resume
+          <a href="{{ profile.resume.url }}" class="btn btn-success" target="_blank">View Your Resume</a>
+          <br>
+          <hr>
+          <b>Update your resume</b>
           <form method="POST" action='{% url "profile" username=request.user %}'>
-            <input type="file" name="resume">
+            <input type="file" name="resume" title="abc">
+            <br>
             <button class="btn btn-success" type="submit">Upload</button>
           </form>
         </div>
@@ -35,12 +40,6 @@
         <h3 class="text-uppercase"><b>About {{profile.user.username}}</b></h3>
         <hr>
         <p>{{profile.about}}</p>
-
-        Upload your resume
-        <form method="POST" action='{% url "profile" username=request.user %}'>
-          <input type="file" name="resume">
-          <button class="btn btn-success" type="submit">Upload</button>
-        </form>
       </div>
     </div>
   {% endif %}
