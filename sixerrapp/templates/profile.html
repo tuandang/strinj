@@ -1,6 +1,5 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
-
 {% block page %}
   {% if request.user == profile.user %}
     <br/>
@@ -10,29 +9,22 @@
         <div class="panel-body">
           <img src="{{profile.avatar}}" class="img-circle" height="120" width="120">
           <hr>
-          <b>About you</b>
+          <h4>About you</h4>
           <input class="form-control" name="about" value="{{profile.about}}">
           <hr>
           {% if not profile.resume %} <!-- User does not have resume -->
-          <b>Update your resume</b>
           <form method="POST" action='{% url "profile" username=request.user %}'>
-            <input type="file" name="resume" title="abc">
-            <br>
-            <button class="btn btn-success" type="submit">Upload</button>
+            <input type="file" name="file" id="file" class="inputfile" /><!-- does not hide in Safari -->
+            <label for="file">Upload your resume</label> 
           </form>
 
           {% else %} <!-- User already uploaded resume -->
-          <b>Resume</b>
-          <input class="form-control" name="about" value="{{profile.resume}}">
+          <a href="{{ profile.resume.url }}" class="btn btn-success">Resume</a>
           <br>
-          <a href="{{ profile.resume.url }}" class="btn btn-success" target="_blank">View Your Resume</a>
           <br>
-          <hr>
-          <b>Update your resume</b>
           <form method="POST" action='{% url "profile" username=request.user %}'>
-            <input type="file" name="resume" title="abc">
-            <br>
-            <button class="btn btn-success" type="submit">Upload</button>
+            <input type="file" name="file" id="file" class="inputfile" /><!-- does not hide in Safari -->
+            <label for="file">Update your resume</label> 
           </form>
           {% endif %}
         </div>
