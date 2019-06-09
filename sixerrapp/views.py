@@ -3,8 +3,8 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django import forms
 
-from .models import Gig, Profile, Company
-from .forms import GigForm
+from .models import *
+from .forms import *
 
 
 
@@ -64,12 +64,13 @@ def my_gigs(request):
 
 @login_required(login_url="/")
 def profile(request, username):
-    if request.method == 'POST':
+    if request.method == 'POST': # if upload/update profile
         profile = Profile.objects.get(user=request.user)
-        profile.about = request.POST['about']
-        #profile.slogan = request.POST['slogan']
-        profile.resume = request.POST['resume']
-        profile.save()
+        profile_update = ProfileForm(request.POST, request.FILES, instance=profile)
+        if profile_update.is_valid():
+            profile_update.save()
+        else:
+            error = "Data is not valid"
     else:
         try:
             profile = Profile.objects.get(user__username=username)
@@ -129,3 +130,6 @@ class UserCreateForm(UserCreationForm):
 
         for fieldname in ['username', 'password1', 'password2']:
             self.fields[fieldname].help_text = None
+
+
+
