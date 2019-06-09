@@ -75,6 +75,7 @@ a:hover {
 
 .inputfile + label:hover {
     background-color: #FF6347;
+    cursor: pointer;
 }
 
 .inputfile + label * {

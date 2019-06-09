@@ -13,7 +13,7 @@
           <input class="form-control" name="about" value="{{profile.about}}">
           <hr>
           {% if not profile.resume %} <!-- User does not have resume -->
-            <input type="file" name="file" id="file" class="inputfile" /><!-- does not hide in Safari -->
+            <input type="file" name="resume" id="file" class="inputfile" />
             <label for="file">Upload your resume</label> 
             <br>
             <br>
@@ -23,11 +23,6 @@
           <a href="{{ profile.resume.url }}" class="btn btn-success">Resume</a>
           <br>
           <br>
-          <!-- <form method="POST" action='{% url "profile" username=request.user %}'>
-             <input type="file" name="resume" title="abc">
-             <br>
-             <button class="btn btn-success" type="submit">Upload</button>
-           </form> -->
             <input type="file" name="resume" id="resume" class="inputfile" />
             <label for="resume">Update your resume</label> 
             <br>
