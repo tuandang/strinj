@@ -1,22 +1,39 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
-
 {% block page %}
   {% if request.user == profile.user %}
     <br/>
-    <form method="POST">
+    <form method="POST" enctype="multipart/form-data" action='{% url "profile" username=request.user %}'>
       {% csrf_token %%}
       <div class="panel panel-default">
         <div class="panel-body">
           <img src="{{profile.avatar}}" class="img-circle" height="120" width="120">
           <hr>
-          <a href="{{ profile.resume.url}}" class="btn btn-success" target="_blank">View Your Resume</a>
-          <hr>
+          <h4>About you</h4>
           <input class="form-control" name="about" value="{{profile.about}}">
-          <input class="form-control" name="about" value="{{profile.resume}}">
-          <br>
+          <hr>
+          {% if not profile.resume %} <!-- User does not have resume -->
+            <input type="file" name="file" id="file" class="inputfile" /><!-- does not hide in Safari -->
+            <label for="file">Upload your resume</label> 
+            <br>
+            <br>
+            <button class="btn btn-success" type="submit">Save</button>
 
-          <button class="btn btn-success" type="submit">Update</button>
+          {% else %} <!-- User already uploaded resume -->
+          <a href="{{ profile.resume.url }}" class="btn btn-success">Resume</a>
+          <br>
+          <br>
+          <!-- <form method="POST" action='{% url "profile" username=request.user %}'>
+             <input type="file" name="resume" title="abc">
+             <br>
+             <button class="btn btn-success" type="submit">Upload</button>
+           </form> -->
+            <input type="file" name="resume" id="resume" class="inputfile" />
+            <label for="resume">Update your resume</label> 
+            <br>
+            <br>
+            <button class="btn btn-success" type="submit">Save</button>
+          {% endif %}
         </div>
       </div>
     </form>
