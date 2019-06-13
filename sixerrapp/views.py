@@ -13,6 +13,8 @@ def home(request):
     gigs = Gig.objects.filter(status=True)
     return render(request, 'home.html', {"gigs": gigs})
 
+##### Gig related #####
+
 def gig_detail(request, id):
     try:
         gig = Gig.objects.get(id=id)
@@ -61,6 +63,8 @@ def edit_gig(request, id):
 def my_gigs(request):
     gigs = Gig.objects.filter(user=request.user)
     return render(request, 'my_gigs.html', {"gigs": gigs})
+
+##### Profile related ######
 
 @login_required(login_url="/")
 def profile(request, username):
@@ -121,6 +125,48 @@ def register(request):
 
         args = {'form': form}
         return render(request, 'reg_form.html', args)
+
+##### Company Subscription ######
+@login_required(login_url="/")
+def register_company(request):
+    error = ''
+    if request.method == 'POST':
+        company_form = CompanyForm(request.POST, request.FILES)
+        if company_form.is_valid():
+            # TODO: Verify user's relation with company
+            # profile = Profile.objects.get(user=request.user)
+
+            # Register the company
+            company = company_form.save(commit=False)
+            # profile.company = company
+            company.save()
+            # profile.save()
+            # print(profile)
+            # print(profile.company)
+            Profile.objects.filter(user=request.user).update(company=company)
+            return redirect('edit_company')
+        else:
+            error = "Data is not valid"
+    return render(request, 'register_company.html', {"error": error})
+
+# TODO:
+@login_required(login_url="/")
+def edit_company(request):
+    try:
+        profile = Profile.objects.get(user=request.user)
+        company = profile.company
+        error = ''
+        if request.method == 'POST':
+            company_form = CompanyForm(request.POST, request.FILES, instance=company)
+            if company_form.is_valid():
+                company.save()
+                return redirect('edit_company')
+            else:
+                error = "Data is not valid"
+
+        return render(request, 'edit_company.html', {"error": error})
+    except Company.DoesNotExist:
+        return redirect('/') # TODO
 
 class UserCreateForm(UserCreationForm):
     email = forms.EmailField(required=True)

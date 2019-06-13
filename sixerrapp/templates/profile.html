@@ -12,14 +12,14 @@
           <h4>About you</h4>
           <input class="form-control" name="about" value="{{profile.about}}">
           <hr>
-          {% if not profile.resume %} <!-- User does not have resume -->
+          <!---------- Resume -------->
+          {% if not profile.resume %} <!-- do not have resume -->
             <input type="file" name="resume" id="file" class="inputfile" />
             <label for="file">Upload your resume</label> 
             <br>
             <br>
             <button class="btn btn-success" type="submit">Save</button>
-
-          {% else %} <!-- User already uploaded resume -->
+          {% else %} <!-- already uploaded resume -->
           <a href="{{ profile.resume.url }}" class="btn btn-success">Resume</a>
           <br>
           <br>
@@ -28,6 +28,15 @@
             <br>
             <br>
             <button class="btn btn-success" type="submit">Save</button>
+          {% endif %}
+          <hr>
+          <!---------- Company -------->
+          <h4>About your company</h4>
+          <br>
+          {% if not profile.company %} <!-- do not have company -->
+          <a href="{% url 'register_company' %}" class="btn btn-primary">Register</a>
+          {% else %} <!-- already uploaded resume -->
+          <a href="{% url 'view_company' %}" class="btn btn-primary">View</a>
           {% endif %}
         </div>
       </div>
