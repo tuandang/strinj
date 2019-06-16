@@ -18,7 +18,7 @@ class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     avatar = models.CharField(max_length=500)
     resume = models.FileField(upload_to='resumes', null=True, blank=True)
-    company = models.ForeignKey(Company, on_delete=models.CASCADE, null=True, blank=True)
+    company = models.ForeignKey(Company, null=True, blank=True, on_delete=models.SET_NULL)
 
     def __str__(self):
         return self.user.username

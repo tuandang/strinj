@@ -35,8 +35,8 @@
           <br>
           {% if not profile.company %} <!-- do not have company -->
           <a href="{% url 'register_company' %}" class="btn btn-primary">Register</a>
-          {% else %} <!-- already uploaded resume -->
-          <a href="{% url 'view_company' %}" class="btn btn-primary">View</a>
+          {% else %} <!-- already register company -->
+          <a href="{% url 'edit_company' %}" class="btn btn-primary">View</a>
           {% endif %}
         </div>
       </div>

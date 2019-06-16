@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block page %}
+    <br/>
+    <form method="POST" enctype="multipart/form-data" action='{% url "profile" username=request.user %}'>
+      {% csrf_token %%}
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <img src="{{profile.avatar}}" class="img-circle" height="120" width="120">
+          <hr>
+          <h4>About you</h4>
+          <input class="form-control" name="about">
+          <hr>
+          <!---------- Resume -------->
+            <input type="file" name="resume" id="file" class="inputfile" />
+            <label for="file">Upload your resume</label> 
+            <br>
+            <br>
+            <button class="btn btn-success" type="submit">Save</button>
+        </div>
+      </div>
+    </form>
+
+{% endblock %}
