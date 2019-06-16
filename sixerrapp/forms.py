@@ -1,5 +1,5 @@
 from django.forms import ModelForm
-from .models import Gig, Profile
+from .models import *
 
 class GigForm(ModelForm):
     class Meta:
@@ -10,3 +10,8 @@ class ProfileForm(ModelForm):
 	class Meta:
 		model = Profile
 		fields = ['resume']
+
+class CompanyForm(ModelForm):
+	class Meta:
+		model = Company
+		fields = ['title', 'description', 'url']

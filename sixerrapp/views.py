@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django import forms
+from django.http import HttpResponse, HttpResponseRedirect 
+from django.core.urlresolvers import reverse
 
 from .models import *
 from .forms import *
@@ -12,6 +14,8 @@ from .forms import *
 def home(request):
     gigs = Gig.objects.filter(status=True)
     return render(request, 'home.html', {"gigs": gigs})
+
+##### Gig related #####
 
 def gig_detail(request, id):
     try:
@@ -62,8 +66,16 @@ def my_gigs(request):
     gigs = Gig.objects.filter(user=request.user)
     return render(request, 'my_gigs.html', {"gigs": gigs})
 
+##### Profile related ######
+
 @login_required(login_url="/")
 def profile(request, username):
+    try:
+        profile = Profile.objects.get(user=request.user)
+    except:
+        profile = ""
+    if not profile:
+        return HttpResponseRedirect(reverse('create_profile'))
     if request.method == 'POST': # if upload/update profile
         profile = Profile.objects.get(user=request.user)
         profile_update = ProfileForm(request.POST, request.FILES, instance=profile)
@@ -85,11 +97,11 @@ def create_profile(request):
         form = ProfileForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect(reverse('created'))
+            return HttpResponseRedirect(reverse('profile'))
     else:
         form = ProfileForm()
 
-    return render(request, 'profile.html',{'form':form})
+    return render(request, 'create_profile.html',{'form':form})
 
 def category(request, link):
     categories = {
@@ -121,6 +133,44 @@ def register(request):
 
         args = {'form': form}
         return render(request, 'reg_form.html', args)
+
+##### Company Subscription ######
+@login_required(login_url="/")
+def register_company(request):
+    error = ''
+    if request.method == 'POST':
+        company_form = CompanyForm(request.POST, request.FILES)
+        if company_form.is_valid():
+            # TODO: Verify user's relation with company
+            # profile = Profile.objects.get(user=request.user)
+
+            # Register the company
+            company = company_form.save(commit=False)
+            company.save()
+            Profile.objects.filter(user=request.user).update(company=company)
+            return redirect('edit_company')
+        else:
+            error = "Data is not valid"
+    return render(request, 'register_company.html', {"error": error})
+
+@login_required(login_url="/")
+def edit_company(request):
+    try:
+        profile = Profile.objects.get(user=request.user)
+        company = profile.company
+        error = ''
+        if request.method == 'POST':
+            company_form = CompanyForm(request.POST, request.FILES, instance=company)
+            if company_form.is_valid():
+                company_form.save()
+                return redirect('edit_company')
+            else:
+                error = "Data is not valid"
+                return render(request, 'edit_company.html', {"error": error})
+        return render(request, 'edit_company.html', {"company": company, "error": error})
+    except Company.DoesNotExist: # Need checking
+        error = "There is no such company"
+        return render(request, 'edit_company.html', {"error": error})
 
 class UserCreateForm(UserCreationForm):
     email = forms.EmailField(required=True)
