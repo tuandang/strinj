@@ -29,7 +29,7 @@
 
 
 body {
-  padding-top: 60px;
+  padding-top: 80px;
 }
 
 a {
@@ -84,4 +84,34 @@ a:hover {
 
 .inputfile + label * {
   pointer-events: none;
+}
+
+/* Sidebar */
+.sidenav {
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 50px;
+  left: 10px;
+  background: #eee;
+  overflow-x: hidden;
+  padding: 8px 0;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #2196F3;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #064579;
+}
+
+.main {
+  margin-left: 160px; /* Same as the width of the sidenav */
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
 }

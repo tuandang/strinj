@@ -43,3 +43,12 @@ class Gig(models.Model):
 
     def __str__(self):
         return self.title
+
+class Job(models.Model):
+    title = models.CharField(max_length=500)
+    company = models.ForeignKey(Company, null=True, blank=True, on_delete=models.CASCADE)
+    requirements = models.TextField() # TODO
+    # TODO hashtag = 
+    description = models.TextField()
+    deadline = models.DateTimeField(null=True, blank=True)
+    url = models.TextField()

@@ -11,29 +11,39 @@
     </div>
   {% endif %}
 
+  <div class="sidenav"> <!-- TODO: Fix bug: because header covers part of the form, sidebar does not work correctly -->
+    <hr>
+    <hr>
+    <a href="#about">About</a>
+    <a href="#members">Members</a>
+    <a href="#gigs">Gigs</a>
+    <a href="#jobs">Jobs</a>
+  </div>
+
   <div class="panel panel-default">
     <div class="panel-body">
-      <form class="form-horizontal" method="POST" enctype="multipart/form-data" action='{% url "edit_company" %}' id="test">
+      <!-- Main information about the company -->
+      <form class="form-horizontal" method="POST" enctype="multipart/form-data" action='{% url "edit_company" %}' id="about">
         {% csrf_token %}
-
+        <h2 style="margin-bottom: 30px">About Company</h2>
         <div class="form-group">
           <label class="col-sm-2 control-label">COMPANY TITLE</label>
           <div class="col-sm-10">
-            <textarea rows="3" class="form-control" name="title" form="test">{{ company.title }} </textarea>
+            <textarea rows="3" class="form-control" name="title" form="about">{{ company.title }} </textarea>
           </div>
         </div>
 
         <div class="form-group">
           <label class="col-sm-2 control-label">DESCRIPTION</label>
           <div class="col-sm-10">
-            <textarea rows="5" class="form-control" name="description" form="test">{{ company.description }}</textarea>
+            <textarea rows="5" class="form-control" name="description" form="about">{{ company.description }}</textarea>
           </div>
         </div>
 
         <div class="form-group">
           <label class="col-sm-2 control-label">URL</label>
           <div class="col-sm-10">
-            <textarea rows="2" class="form-control" name="url" form="test">{{ company.url }}</textarea>
+            <textarea rows="2" class="form-control" name="url" form="about">{{ company.url }}</textarea>
           </div>
         </div>
         
@@ -44,7 +54,85 @@
         </div>
 
       </form>
+    <hr>
+    <!-- Members of companies -->
+    <h2 style="margin-bottom: 30px">Members</h2>
+      <div class="panel panel-default" id="members">
+        <table class="table table-bordered table-striped">
+          <thead class="bg-success">
+            <tr>
+              <th>
+                <th>Username</th>
+                <th>Role</th>
+                <th>Edit</th>
+              </th>
+            </tr>
+          </thead>
+          <tbod>
+            {% for profile in profiles %}
+              <tr>
+                <td>{{ forloop.counter }}</td>
+                <td><a href="{% url 'profile' profile.id %}">{{profile.user.username}}</a></td>
+                <td>TODO</td>
+                <td>TODO</td>
+              </tr>
+            {% endfor %}
+          </tbod>
+        </table>
+      </div>
+    <hr>
+    <!-- GiGs -->
+    <h2 style="margin-bottom: 30px">Gigs</h2>
+      <div class="panel panel-default" id="gigs">
+        <table class="table table-bordered table-striped">
+          <thead class="bg-success">
+            <tr>
+              <th>
+                <th>Gig Title</th>
+                <th>Status</th>
+                <th>Time created</th>
+              </th>
+            </tr>
+          </thead>
+          <tbod>
+            {% for gig in gigs %}
+              <tr>
+                <td>{{ forloop.counter }}</td>
+                <td> <a href="{% url 'edit_gig' gig.id %}">{{ gig.title }}</a> </td>
+                <td>{% if gig.status %} Active {% else %} Disabled {% endif %} </td>
+                <td> {{ gig.create_time }} </td>
+              </tr>
+            {% endfor %}
+          </tbod>
+        </table>
+      </div>
+    <hr>
+    <!-- Job posting -->
+    <h2 style="margin-bottom: 30px">Jobs posting</h2>
+      <div class="panel panel-default" id="jobs">
+        <table class="table table-bordered table-striped">
+          <thead class="bg-success">
+            <tr>
+              <th>
+                <th>Title</th>
+                <th>Deadline</th>
+                <th>Urls</th>
+              </th>
+            </tr>
+          </thead>
+          <tbod>
+            {% for job in jobs %}
+              <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ job.title }}</td>
+                <td>{{ job.deadline }}</td>
+                <td>{{ job.url }}</td>
+              </tr>
+            {% endfor %}
+          </tbod>
+        </table>
+      </div>
+
     </div>
   </div>
-
 {% endblock %}
