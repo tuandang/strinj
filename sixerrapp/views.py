@@ -170,13 +170,10 @@ def edit_company(request):
                 company_form.save()
                 return redirect('edit_company')
             else:
-                print()
-                print(company_form)
                 error = "Data is not valid"
                 return render(request, 'edit_company.html', {"error": error})
 
         # retrieve company info: gig, all registered people, jobs
-        print(company)
         gigs = Gig.objects.filter(company=company)
         profiles = Profile.objects.filter(company=company)
         jobs = Job.objects.filter(company=company)
