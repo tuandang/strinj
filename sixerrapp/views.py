@@ -142,8 +142,14 @@ def register_company(request):
         company_form = CompanyForm(request.POST, request.FILES)
         if company_form.is_valid():
             # TODO: Verify user's relation with company
-            # profile = Profile.objects.get(user=request.user)
 
+            # Check if the company is already registered by other users
+            profile = Profile.objects.get(user=request.user)
+            if Company.objects.filter(title=company_form.cleaned_data['title']).exists():
+                profile.company = Company.objects.filter(title=company_form.cleaned_data['title'])[0]
+                profile.save()
+                error = "Company is already registered" # TODO: pass this error to edit_company
+                return redirect('edit_company')
             # Register the company
             company = company_form.save(commit=False)
             company.save()
@@ -156,10 +162,9 @@ def register_company(request):
 @login_required(login_url="/")
 def edit_company(request):
     try:
-        profile = Profile.objects.get(user=request.user)
-        company = profile.company
+        company = Profile.objects.get(user=request.user).company
         error = ''
-        if request.method == 'POST':
+        if request.method == 'POST': # update company info
             company_form = CompanyForm(request.POST, request.FILES, instance=company)
             if company_form.is_valid():
                 company_form.save()
@@ -167,10 +172,50 @@ def edit_company(request):
             else:
                 error = "Data is not valid"
                 return render(request, 'edit_company.html', {"error": error})
-        return render(request, 'edit_company.html', {"company": company, "error": error})
+
+        # retrieve company info: gig, all registered people, jobs
+        gigs = Gig.objects.filter(company=company)
+        profiles = Profile.objects.filter(company=company)
+        jobs = Job.objects.filter(company=company)
+        return render(request, 'edit_company.html', {
+            "error": error,
+            "company": company, 
+            "gigs": gigs,
+            "profiles": profiles,
+            "jobs": jobs
+            })
     except Company.DoesNotExist: # Need checking
         error = "There is no such company"
         return render(request, 'edit_company.html', {"error": error})
+
+# @login_required(login_url="/")
+# def edit_job(request):
+#     try:
+#         company = Profile.objects.get(user=request.user).company
+#         error = ''
+#         if request.method == 'POST': # update company info
+#             company_form = CompanyForm(request.POST, request.FILES, instance=company)
+#             if company_form.is_valid():
+#                 company_form.save()
+#                 return redirect('edit_company')
+#             else:
+#                 error = "Data is not valid"
+#                 return render(request, 'edit_company.html', {"error": error})
+
+#         # retrieve company info: gig, all registered people, jobs
+#         gigs = Gig.objects.filter(company=company)
+#         profiles = Profile.objects.filter(company=company)
+#         jobs = Job.objects.filter(company=company)
+#         return render(request, 'edit_company.html', {
+#             "error": error,
+#             "company": company, 
+#             "gigs": gigs,
+#             "profiles": profiles,
+#             "jobs": jobs
+#             })
+#     except Company.DoesNotExist: # Need checking
+#         error = "There is no such company"
+#         return render(request, 'edit_company.html', {"error": error})
 
 class UserCreateForm(UserCreationForm):
     email = forms.EmailField(required=True)
