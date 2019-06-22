@@ -15,3 +15,8 @@ class CompanyForm(ModelForm):
 	class Meta:
 		model = Company
 		fields = ['title', 'description', 'url']
+
+# class JobForm(ModelForm):
+# 	class Meta:
+# 		model = Job
+# 		fields = ['title', 'description', 'url', 'requiments']

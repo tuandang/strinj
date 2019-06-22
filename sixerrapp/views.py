@@ -146,15 +146,15 @@ def register_company(request):
             # Check if the company is already registered by other users
             profile = Profile.objects.get(user=request.user)
             if Company.objects.filter(title=company_form.cleaned_data['title']).exists():
-                profile.company = Company.objects.filter(title=company_form.cleaned_data['title'])[0]
-                profile.save()
-                error = "Company is already registered" # TODO: pass this error to edit_company
-                return redirect('edit_company')
+                # profile.company = Company.objects.filter(title=company_form.cleaned_data['title'])[0]
+                # profile.save()
+                error = "Company is already registered. The company will be notified" # TODO: pass this error to edit_company
             # Register the company
-            company = company_form.save(commit=False)
-            company.save()
-            Profile.objects.filter(user=request.user).update(company=company)
-            return redirect('edit_company')
+            else:
+                company = company_form.save(commit=False)
+                company.save()
+                Profile.objects.filter(user=request.user).update(company=company)
+                return redirect('edit_company')
         else:
             error = "Data is not valid"
     return render(request, 'register_company.html', {"error": error})
