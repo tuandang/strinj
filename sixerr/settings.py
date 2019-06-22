@@ -123,7 +123,7 @@ STATIC_URL = '/static/'
 # load variables from local if it's a local env
 if 'BUCKETEER_AWS_ACCESS_KEY_ID' not in os.environ:
     try:
-        from local_settings import *
+        from .local_settings import *
     except ImportError:
         pass
 
@@ -140,20 +140,25 @@ if 'BUCKETEER_AWS_ACCESS_KEY_ID' in os.environ:
     AWS_ACCESS_KEY_ID = os.environ['BUCKETEER_AWS_ACCESS_KEY_ID']
     AWS_SECRET_ACCESS_KEY = os.environ['BUCKETEER_AWS_SECRET_ACCESS_KEY']
     AWS_STORAGE_BUCKET_NAME = os.environ['BUCKETEER_BUCKET_NAME']
+    AWS_S3_OBJECT_PARAMETERS = {
+        'CacheControl': 'max-age=86400',
+    }
+    AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+    AWS_LOCATION = 'media'
+    DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
 # local
 else:
+    # Change this to your local Database configurations
     DATABASES['default']['NAME'] = 'taskbuster_db'
     #DATABASES['default']['DATABASE_URL'] = DATABASE_URL_LC
-    AWS_ACCESS_KEY_ID = BUCKETEER_AWS_ACCESS_KEY_ID_LC
-    AWS_SECRET_ACCESS_KEY = BUCKETEER_AWS_SECRET_ACCESS_KEY_LC
-    AWS_STORAGE_BUCKET_NAME = BUCKETEER_BUCKET_NAME_LC
+    # AWS_ACCESS_KEY_ID = BUCKETEER_AWS_ACCESS_KEY_ID_LC
+    # AWS_SECRET_ACCESS_KEY = BUCKETEER_AWS_SECRET_ACCESS_KEY_LC
+    # AWS_STORAGE_BUCKET_NAME = BUCKETEER_BUCKET_NAME_LC
+    MEDIA_URL = '/media/'
+    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-AWS_S3_OBJECT_PARAMETERS = {
-    'CacheControl': 'max-age=86400',
-}
-AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
-AWS_LOCATION = 'media'
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
 
 ########## to be deleted ##########################################
 # STATICFILES_DIRS = [
@@ -161,10 +166,6 @@ DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 # ]
 # STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
 ########## to be deleted ##########################################
-
-
-
-
 
 
 
@@ -183,6 +184,12 @@ CRISPY_TEMPLATE_PACK='bootstrap3'
 SOCIAL_AUTH_FACEBOOK_KEY = '269842407020498'
 SOCIAL_AUTH_FACEBOOK_SECRET = '7f7de15749491e53643250916e93bf01'
 
+# # To obtain email
+# SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
+# SOCIAL_AUTH_FACEBOOK_PROFILE_EXTRA_PARAMS = {
+#     'fields': 'id,name,email', 
+# }
+
 SOCIAL_AUTH_PIPELINE = (
     'social_core.pipeline.social_auth.social_details',
     'social_core.pipeline.social_auth.social_uid',
@@ -197,9 +204,11 @@ SOCIAL_AUTH_PIPELINE = (
 )
 
 # replace database settings to use posgress on Heroku
-import dj_database_url
-db_from_env = dj_database_url.config()
-DATABASES['default'].update(db_from_env)
+# prod env
+if 'BUCKETEER_AWS_ACCESS_KEY_ID' in os.environ:
+    import dj_database_url
+    db_from_env = dj_database_url.config()
+    DATABASES['default'].update(db_from_env)
 
 # setup upload directory for Gig model
 #MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
