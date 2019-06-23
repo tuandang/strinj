@@ -188,34 +188,41 @@ def edit_company(request):
         error = "There is no such company"
         return render(request, 'edit_company.html', {"error": error})
 
-# @login_required(login_url="/")
-# def edit_job(request):
-#     try:
-#         company = Profile.objects.get(user=request.user).company
-#         error = ''
-#         if request.method == 'POST': # update company info
-#             company_form = CompanyForm(request.POST, request.FILES, instance=company)
-#             if company_form.is_valid():
-#                 company_form.save()
-#                 return redirect('edit_company')
-#             else:
-#                 error = "Data is not valid"
-#                 return render(request, 'edit_company.html', {"error": error})
+@login_required(login_url="/")
+def create_job(request):
+    error = ''
+    if request.method == 'POST':
+        job_form = JobForm(request.POST, request.FILES)
+        if job_form.is_valid():
+            # Add the job
+            job = job_form.save(commit=False)
+            job.company = Profile.objects.get(user=request.user).company
+            job.save()
+            return redirect('edit_company')
+        else:
+            error = "Data is not valid"
+    return render(request, 'create_job.html', {"error": error})
 
-#         # retrieve company info: gig, all registered people, jobs
-#         gigs = Gig.objects.filter(company=company)
-#         profiles = Profile.objects.filter(company=company)
-#         jobs = Job.objects.filter(company=company)
-#         return render(request, 'edit_company.html', {
-#             "error": error,
-#             "company": company, 
-#             "gigs": gigs,
-#             "profiles": profiles,
-#             "jobs": jobs
-#             })
-#     except Company.DoesNotExist: # Need checking
-#         error = "There is no such company"
-#         return render(request, 'edit_company.html', {"error": error})
+@login_required(login_url="/")
+def edit_job(request, id):
+    try:
+        print("H")
+        job = Job.objects.get(id=id)
+        if job.company != Profile.objects.get(user=request.user).company:
+            error = 'You do not have access to view this job'
+            return render(request, 'edit_job.html', {"job": job, "error": error})
+        error = ''
+        if request.method == 'POST':
+            job_form = JobForm(request.POST, request.FILES, instance=job)
+            if job_form.is_valid():
+                job.save()
+                return redirect('edit_company')
+            else:
+                error = "Data is not valid"
+
+        return render(request, 'edit_job.html', {"job": job, "error": error})
+    except Job.DoesNotExist:
+        return redirect('/')
 
 class UserCreateForm(UserCreationForm):
     email = forms.EmailField(required=True)

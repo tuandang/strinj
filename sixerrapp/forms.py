@@ -1,22 +1,22 @@
-from django.forms import ModelForm
+from django import forms
 from .models import *
 
-class GigForm(ModelForm):
+class GigForm(forms.ModelForm):
     class Meta:
         model = Gig
         fields = ['title', 'category', 'description', 'photo', 'status']
 
-class ProfileForm(ModelForm):
+class ProfileForm(forms.ModelForm):
 	class Meta:
 		model = Profile
 		fields = ['resume']
 
-class CompanyForm(ModelForm):
+class CompanyForm(forms.ModelForm):
 	class Meta:
 		model = Company
 		fields = ['title', 'description', 'url']
 
-# class JobForm(ModelForm):
-# 	class Meta:
-# 		model = Job
-# 		fields = ['title', 'description', 'url', 'requiments']
+class JobForm(forms.ModelForm):
+	class Meta:
+		model = Job
+		fields = ['title', 'description', 'url', 'requirements', 'deadline']
