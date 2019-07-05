@@ -29,7 +29,7 @@ def gig_detail(request, id):
     return render(request, 'gig_detail.html', {"companies": companies, "gig": gig})
 
 @login_required(login_url="/")
-def create_gig(request):
+def create_story(request):
     error = ''
     if request.method == 'POST':
         gig_form = GigForm(request.POST, request.FILES)
@@ -45,7 +45,7 @@ def create_gig(request):
     return render(request, 'create_gig.html', {"error": error})
 
 @login_required(login_url="/")
-def edit_gig(request, id):
+def edit_story(request, id):
     try:
         gig = Gig.objects.get(id=id, user=request.user)
         error = ''

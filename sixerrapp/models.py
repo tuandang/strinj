@@ -77,7 +77,7 @@ class Job(models.Model):
     title = models.CharField(max_length=500)
     companies = models.ForeignKey(Company, on_delete=models.CASCADE)
     description = models.TextField()
-    requirement = models.TextField()
+    requirements = models.TextField()
     url = models.TextField()
     hashtags = models.ManyToManyField(Hashtag)
 
