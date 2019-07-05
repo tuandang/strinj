@@ -12,7 +12,7 @@ from django.db import models
 # has Many to Many relationship w/ Industry, Sector, Skill or Tool, Story, Profile, Job
 class Hashtag(models.Model):
     name = models.TextField()
-    created_at = models.DateTimeField(auto_now_add=True)
+    create_time = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
         return self.name
@@ -20,17 +20,17 @@ class Hashtag(models.Model):
 
 class Industry(models.Model):
     hashtag = models.OneToOneField(Hashtag, on_delete=models.CASCADE)
-    hashtags = models.ManyToManyField(Hashtag)
+    hashtags = models.ManyToManyField(Hashtag, related_name='related_industry_hashtags')
 
 
 class Sector(models.Model):
     hashtag = models.OneToOneField(Hashtag, on_delete=models.CASCADE)
-    hashtags = models.ManyToManyField(Hashtag)
+    hashtags = models.ManyToManyField(Hashtag, related_name='related_sector_hashtags')
 
 
 class SkillOrTool(models.Model):
     hashtag = models.OneToOneField(Hashtag, on_delete=models.CASCADE)
-    hashtags = models.ManyToManyField(Hashtag)
+    hashtags = models.ManyToManyField(Hashtag, related_name='related_skill_or_tool_hashtags')
 
     # for query optimization
     industries = models.ManyToManyField(Industry)
@@ -45,7 +45,7 @@ class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     avatar = models.CharField(max_length=500)
     about = models.TextField()
-    created_at = models.DateTimeField(auto_now_add=True)
+    create_time = models.DateTimeField(default=timezone.now)
     hashtags = models.ManyToManyField(Hashtag)
 
     def __str__(self):
@@ -53,7 +53,7 @@ class Profile(models.Model):
 
 
 class Company(models.Model):
-    profile = models.OneToOneField(Profile, on_delete=models.CASCADE)
+    profile = models.OneToOneField(Profile, null=True, on_delete=models.CASCADE)
     title = models.CharField(max_length=500)
     url = models.TextField()  # career url
 
@@ -81,7 +81,7 @@ class Job(models.Model):
     url = models.TextField()
     hashtags = models.ManyToManyField(Hashtag)
 
-    created_at = models.DateTimeField(auto_now_add=True)
+    create_time = models.DateTimeField(default=timezone.now)
     deadline = models.DateTimeField(blank=True, null=True)  # allow field to be blank and if so store as null
 
     def __str__(self):
@@ -92,8 +92,7 @@ class Story(models.Model):
     title = models.CharField(max_length=500)
     content = models.TextField()
     photo = models.FileField(upload_to='stories')
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    create_time = models.DateTimeField(default=timezone.now)
 
     # authors = models.ManyToManyField(User)  # enable when allow for a story to have many authors
     author = models.ForeignKey(User)

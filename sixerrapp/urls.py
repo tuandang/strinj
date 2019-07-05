@@ -12,7 +12,6 @@ urlpatterns = [
     
     url(r'^profile/(?P<username>\w+)/$', views.profile, name='profile'),
     url(r'^create_profile/$', views.create_profile, name='create_profile'),
-    url(r'^category/(?P<link>[\w|-]+)/$', views.category, name='category'),
     url(r'^search/$', views.search, name='search'),
     url(r'^register/$', views.register, name='register'),
     url(r'^login/$',
