@@ -5,14 +5,13 @@ from django.contrib.auth.views import login
 urlpatterns = [
     url(r'^$', views.home, name='home'),
     
-    url(r'^gigs/(?P<id>[0-9]+)/$', views.gig_detail, name='gig_detail'),
-    url(r'^my_gigs/$', views.my_gigs, name='my_gigs'),
-    url(r'^create_gig/$', views.create_gig, name='create_gig'),
-    url(r'^edit_gig/(?P<id>[0-9]+)/$', views.edit_gig, name='edit_gig'),
+    url(r'^stories/(?P<id>[0-9]+)/$', views.story_detail, name='story_detail'),
+    url(r'^my_stories/$', views.my_stories, name='my_stories'),
+    url(r'^create_story/$', views.create_story, name='create_story'),
+    url(r'^edit_story/(?P<id>[0-9]+)/$', views.edit_story, name='edit_story'),
     
     url(r'^profile/(?P<username>\w+)/$', views.profile, name='profile'),
     url(r'^create_profile/$', views.create_profile, name='create_profile'),
-    url(r'^category/(?P<link>[\w|-]+)/$', views.category, name='category'),
     url(r'^search/$', views.search, name='search'),
     url(r'^register/$', views.register, name='register'),
     url(r'^login/$',

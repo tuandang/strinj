@@ -1,20 +1,20 @@
 from django import forms
 from .models import *
 
-class GigForm(forms.ModelForm):
+class StoryForm(forms.ModelForm):
     class Meta:
-        model = Gig
-        fields = ['title', 'category', 'description', 'photo', 'status']
+        model = Story
+        fields = ['title', 'content', 'photo']
 
 class ProfileForm(forms.ModelForm):
 	class Meta:
-		model = Profile
+		model = Personal
 		fields = ['resume']
 
 class CompanyForm(forms.ModelForm):
 	class Meta:
 		model = Company
-		fields = ['title', 'description', 'url']
+		fields = ['title', 'profile', 'url']
 
 class JobForm(forms.ModelForm):
 	class Meta:
