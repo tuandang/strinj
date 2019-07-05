@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block page %}
+
+  <div class="row">
+    <div class="col-md-8">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <h3>{{ story.title }}</h3>
+          <hr/>
+          <img src="/media/{{ story.photo }}" class="img-responsive center-block">
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4>About This Story</h4>
+        </div>
+        <div class="panel-body">
+          <p>{{ story.content }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <img src="{{ story.author.profile.avatar }}" class="img-circle center-block" height="100" width="100">
+          <a href="{% url 'profile' story.user.username %}"><h4 class="text-center">{{ story.author.username }}</h4></a>
+          <hr/>
+          <p>{{ story.author.profile.about }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
