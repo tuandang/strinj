@@ -1,22 +1,43 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
-
 {% block page %}
   {% if request.user == profile.user %}
     <br/>
-    <form method="POST">
+    <form method="POST" enctype="multipart/form-data" action='{% url "profile" username=request.user %}'>
       {% csrf_token %%}
       <div class="panel panel-default">
         <div class="panel-body">
           <img src="{{profile.avatar}}" class="img-circle" height="120" width="120">
           <hr>
-          <a href="{{ profile.resume.url}}" class="btn btn-success" target="_blank">View Your Resume</a>
-          <hr>
+          <h4>About you</h4>
           <input class="form-control" name="about" value="{{profile.about}}">
-          <input class="form-control" name="about" value="{{profile.resume}}">
+          <hr>
+          <!---------- Resume -------->
+          {% if not profile.resume %} <!-- do not have resume -->
+            <input type="file" name="resume" id="file" class="inputfile" />
+            <label for="file">Upload your resume</label> 
+            <br>
+            <br>
+            <button class="btn btn-success" type="submit">Save</button>
+          {% else %} <!-- already uploaded resume -->
+          <a href="{{ profile.resume.url }}" class="btn btn-success">Resume</a>
           <br>
-
-          <button class="btn btn-success" type="submit">Update</button>
+          <br>
+            <input type="file" name="resume" id="resume" class="inputfile" />
+            <label for="resume">Update your resume</label> 
+            <br>
+            <br>
+            <button class="btn btn-success" type="submit">Save</button>
+          {% endif %}
+          <hr>
+          <!---------- Company -------->
+          <h4>About your company</h4>
+          <br>
+          {% if not profile.company %} <!-- do not have company -->
+          <a href="{% url 'register_company' %}" class="btn btn-primary">Register</a>
+          {% else %} <!-- already register company -->
+          <a href="{% url 'edit_company' %}" class="btn btn-primary">View</a>
+          {% endif %}
         </div>
       </div>
     </form>
