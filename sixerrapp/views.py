@@ -12,7 +12,7 @@ from .forms import *
 
 # Create your views here..
 def home(request):
-    stories = Story.objects.filter(status=True)
+    stories = Story.objects
     return render(request, 'home.html', {"stories": stories})
 
 ##### Gig related #####
