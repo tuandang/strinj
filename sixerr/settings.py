@@ -146,15 +146,10 @@ if 'BUCKETEER_AWS_ACCESS_KEY_ID' in os.environ:
     AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
     AWS_LOCATION = 'media'
     DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-
 # local
 else:
     # Change this to your local Database configurations
     DATABASES['default']['NAME'] = 'taskbuster_db'
-    #DATABASES['default']['DATABASE_URL'] = DATABASE_URL_LC
-    # AWS_ACCESS_KEY_ID = BUCKETEER_AWS_ACCESS_KEY_ID_LC
-    # AWS_SECRET_ACCESS_KEY = BUCKETEER_AWS_SECRET_ACCESS_KEY_LC
-    # AWS_STORAGE_BUCKET_NAME = BUCKETEER_BUCKET_NAME_LC
     MEDIA_URL = '/media/'
     MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 

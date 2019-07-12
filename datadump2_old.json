@@ -176,13 +176,13 @@
     }
 },
 {
-    "model": "sixerrapp.story",
+    "model": "sixerrapp.gig",
     "pk": 1,
     "fields": {
         "title": "Klara",
         "category": "MS",
         "description": "Klara motorbike, with a serious investment in design and technology by Vinfast, is considered a national pride. Especially, the motorbike has a digital screen that can be connected to a smartphone and GPS, as well as a water resistant system that helps your motorbike survive the rainy season. If you are interested in working on the challenges at Vinfast, consider applying to the postings below!",
-        "photo": "stories/12-vinfast-klara-c64f.jpg",
+        "photo": "gigs/12-vinfast-klara-c64f.jpg",
         "status": true,
         "user": [
             "TuanDang"
@@ -194,13 +194,13 @@
     }
 },
 {
-    "model": "sixerrapp.story",
+    "model": "sixerrapp.gig",
     "pk": 2,
     "fields": {
         "title": "Elsa Featured",
         "category": "IT",
         "description": "English pronunciation is always one of the challenges of Vietnamese people. Startup Elsa is solving this problem by using Artificial Intelligence to analyze your pronunciation. This application has helped students and working professionals alike to improve their English speaking skills. Let\u2019s discover opportunities at Elsa!",
-        "photo": "stories/elsa-speaks.png",
+        "photo": "gigs/elsa-speaks.png",
         "status": true,
         "user": [
             "TuanDang"
@@ -212,13 +212,13 @@
     }
 },
 {
-    "model": "sixerrapp.story",
+    "model": "sixerrapp.gig",
     "pk": 3,
     "fields": {
         "title": "Shark Dung's Companies",
         "category": "IT",
         "description": "Shark Nguyen Manh Dzung, the only Vietnamese to manage of Japan\u2019s Cyber Agent Venture Firm, is one of the new sharks in Shark Tank Vietnam Season 2. He is considered the \u201cfather\u201d of popular startups in Vietnam such as Tiki, Vatgia, NhacCuaTui, BatDongSan, Jupviec, Vicare, Topica, Luxstay, CleverAds, and Vexere. In Shark Tank Vietnam Season 2, Shark Dzung promised to invest in new startups ViralWorks and Curnon.",
-        "photo": "stories/Shark-Dzung-Nguyen.jpg",
+        "photo": "gigs/Shark-Dzung-Nguyen.jpg",
         "status": true,
         "user": [
             "TuanDang"
@@ -231,13 +231,13 @@
     }
 },
 {
-    "model": "sixerrapp.story",
+    "model": "sixerrapp.gig",
     "pk": 4,
     "fields": {
         "title": "Education Trend",
         "category": "ED",
         "description": "Gi\u00e1o s\u01b0 Ng\u00f4 B\u1ea3o Ch\u00e2u \u0111\u00e3 \u0111\u1ebfn d\u1ef1 l\u1ec5 khai gi\u1ea3ng c\u1ee7a h\u1ec7 th\u1ed1ng tr\u01b0\u1eddng ph\u1ed5 th\u00f4ng li\u00ean c\u1ea5p Vinschool v\u00e0 c\u00f9ng chia s\u1ebb t\u1ea7m nh\u00ecn v\u1ec1 m\u1ed9t h\u1ec7 th\u1ed1ng gi\u00e1o d\u1ee5c ch\u1ea5t l\u01b0\u1ee3ng, to\u00e0n di\u1ec7n, nh\u00e2n b\u1ea3n m\u00e0 \u0111\u1ed9i ng\u0169 gi\u00e1o vi\u00ean, qu\u1ea3n l\u00fd gi\u00e1o d\u1ee5c t\u1ea1i tr\u01b0\u1eddng \u0111ang t\u1eebng b\u01b0\u1edbc hi\u1ec7n th\u1ef1c ho\u00e1. \u0110i\u1ec3m \u0111\u1eb7c bi\u1ec7t h\u01a1n t\u1ea1i Vinschool khi b\u1ea1n mu\u1ed1n \u0111\u1eb7t t\u00e2m huy\u1ebft v\u00e0o gi\u1ea3ng d\u1ea1y \u0111\u00f3 l\u00e0 ch\u1ebf \u0111\u1ed9 l\u01b0\u01a1ng t\u1ed1t v\u00e0 ch\u01b0\u01a1ng tr\u00ecnh \u0111\u00e0o t\u1ea1o \u201cGi\u00e1o vi\u00ean Tinh hoa\" \u0111\u01b0\u1ee3c thi\u1ebft k\u1ebf chu\u1ea9n qu\u1ed1c t\u1ebf, gi\u00fap cho \u0111\u1ed9i ng\u0169 gi\u00e1o vi\u00ean d\u00e0nh h\u1ebft t\u00e2m s\u1ee9c cho c\u00f4ng cu\u1ed9c \u0111\u00e0o t\u1ea1o th\u1ebf h\u1ec7 c\u00f4ng d\u00e2n to\u00e0n c\u1ea7u \u0111\u1ebfn t\u1eeb Vi\u1ec7t Nam. N\u1ebfu b\u1ea1n l\u00e0 m\u1ed9t trong nh\u1eefng du h\u1ecdc sinh ho\u1eb7c gi\u00e1o vi\u00ean tr\u1ebb n\u0103ng \u0111\u1ed9ng, mu\u1ed1n h\u1ecdc h\u1ecfi th\u00eam v\u1ec1 ngh\u1ec1 gi\u00e1o v\u00e0 l\u00e0m vi\u1ec7c trong m\u00f4i tr\u01b0\u1eddng qu\u1ed1c t\u1ebf th\u00ec Vinschool l\u00e0 m\u1ed9t n\u01a1i kh\u1edfi \u0111\u1ea7u kh\u00f4ng n\u00ean b\u1ecf qua.",
-        "photo": "stories/ngo_bao_chau.jpg",
+        "photo": "gigs/ngo_bao_chau.jpg",
         "status": false,
         "user": [
             "TuanDang"
@@ -249,13 +249,13 @@
     }
 },
 {
-    "model": "sixerrapp.story",
+    "model": "sixerrapp.gig",
     "pk": 6,
     "fields": {
         "title": "FinTech Companies",
         "category": "MS",
         "description": "According to survey, 82% of traditional service providers show interest in cooperating with Fintech companies in the next 3-5 years. 77% of those providers want to use blockchain as part of their system in 2020. Since 2008, Vietnam has more than 20 Fintech companies creating digital payment solutions such as VinaPay, Senpay, Zingpay, or 123Pay. Some other companies want to simplify the fundraising services such as FundStart, Betado, and Firststep. Some other companies want to improve the money exchange services such as Matchmove and Cash2vn. If you are interested in working in these fields, please apply below!",
-        "photo": "stories/Blockchain_fuOfStM.jpg",
+        "photo": "gigs/Blockchain_fuOfStM.jpg",
         "status": true,
         "user": [
             "admin"
@@ -300,7 +300,7 @@
         ],
         "content_type": [
             "sixerrapp",
-            "story"
+            "gig"
         ],
         "object_id": "1",
         "object_repr": "I will fix your JS issue",
@@ -318,7 +318,7 @@
         ],
         "content_type": [
             "sixerrapp",
-            "story"
+            "gig"
         ],
         "object_id": "1",
         "object_repr": "I will fix your JS issue",
@@ -336,7 +336,7 @@
         ],
         "content_type": [
             "sixerrapp",
-            "story"
+            "gig"
         ],
         "object_id": "1",
         "object_repr": "I will fix your JS issue",
@@ -354,7 +354,7 @@
         ],
         "content_type": [
             "sixerrapp",
-            "story"
+            "gig"
         ],
         "object_id": "1",
         "object_repr": "I will fix your JS issue",
@@ -372,7 +372,7 @@
         ],
         "content_type": [
             "sixerrapp",
-            "story"
+            "gig"
         ],
         "object_id": "3",
         "object_repr": "I will create a wedding invitation",
@@ -390,7 +390,7 @@
         ],
         "content_type": [
             "sixerrapp",
-            "story"
+            "gig"
         ],
         "object_id": "2",
         "object_repr": "I will create a new tutorial in NodeJS",
@@ -408,7 +408,7 @@
         ],
         "content_type": [
             "sixerrapp",
-            "story"
+            "gig"
         ],
         "object_id": "3",
         "object_repr": "I will create a wedding invitation",
@@ -426,7 +426,7 @@
         ],
         "content_type": [
             "sixerrapp",
-            "story"
+            "gig"
         ],
         "object_id": "3",
         "object_repr": "I will create a wedding invitation",
@@ -444,7 +444,7 @@
         ],
         "content_type": [
             "sixerrapp",
-            "story"
+            "gig"
         ],
         "object_id": "3",
         "object_repr": "Shark Dung's Portfolio",
@@ -462,7 +462,7 @@
         ],
         "content_type": [
             "sixerrapp",
-            "story"
+            "gig"
         ],
         "object_id": "3",
         "object_repr": "Shark Dung's Portfolio",
@@ -480,7 +480,7 @@
         ],
         "content_type": [
             "sixerrapp",
-            "story"
+            "gig"
         ],
         "object_id": "3",
         "object_repr": "Shark Dung's Portfolio",
@@ -498,7 +498,7 @@
         ],
         "content_type": [
             "sixerrapp",
-            "story"
+            "gig"
         ],
         "object_id": "3",
         "object_repr": "Shark Dung's Portfolio",
@@ -516,7 +516,7 @@
         ],
         "content_type": [
             "sixerrapp",
-            "story"
+            "gig"
         ],
         "object_id": "3",
         "object_repr": "Shark Dung's Portfolio",
@@ -534,7 +534,7 @@
         ],
         "content_type": [
             "sixerrapp",
-            "story"
+            "gig"
         ],
         "object_id": "3",
         "object_repr": "Shark Dung's Portfolio",
@@ -552,7 +552,7 @@
         ],
         "content_type": [
             "sixerrapp",
-            "story"
+            "gig"
         ],
         "object_id": "3",
         "object_repr": "Shark Dung's Portfolio",
@@ -570,7 +570,7 @@
         ],
         "content_type": [
             "sixerrapp",
-            "story"
+            "gig"
         ],
         "object_id": "2",
         "object_repr": "Elsa",
@@ -588,7 +588,7 @@
         ],
         "content_type": [
             "sixerrapp",
-            "story"
+            "gig"
         ],
         "object_id": "2",
         "object_repr": "Elsa",
@@ -606,7 +606,7 @@
         ],
         "content_type": [
             "sixerrapp",
-            "story"
+            "gig"
         ],
         "object_id": "1",
         "object_repr": "Klara",
@@ -624,7 +624,7 @@
         ],
         "content_type": [
             "sixerrapp",
-            "story"
+            "gig"
         ],
         "object_id": "1",
         "object_repr": "Klara",
@@ -642,7 +642,7 @@
         ],
         "content_type": [
             "sixerrapp",
-            "story"
+            "gig"
         ],
         "object_id": "4",
         "object_repr": "Ngo Bao Chau",
@@ -660,7 +660,7 @@
         ],
         "content_type": [
             "sixerrapp",
-            "story"
+            "gig"
         ],
         "object_id": "5",
         "object_repr": "a",
@@ -678,7 +678,7 @@
         ],
         "content_type": [
             "sixerrapp",
-            "story"
+            "gig"
         ],
         "object_id": "6",
         "object_repr": "PwC",
@@ -696,7 +696,7 @@
         ],
         "content_type": [
             "sixerrapp",
-            "story"
+            "gig"
         ],
         "object_id": "6",
         "object_repr": "FinTech Companies",
@@ -714,7 +714,7 @@
         ],
         "content_type": [
             "sixerrapp",
-            "story"
+            "gig"
         ],
         "object_id": "4",
         "object_repr": "Vinschool",
@@ -732,7 +732,7 @@
         ],
         "content_type": [
             "sixerrapp",
-            "story"
+            "gig"
         ],
         "object_id": "3",
         "object_repr": "Shark Dung's Companies",
@@ -750,7 +750,7 @@
         ],
         "content_type": [
             "sixerrapp",
-            "story"
+            "gig"
         ],
         "object_id": "1",
         "object_repr": "Vinfast",
@@ -804,7 +804,7 @@
         ],
         "content_type": [
             "sixerrapp",
-            "story"
+            "gig"
         ],
         "object_id": "3",
         "object_repr": "Shark Dung's Companies",
@@ -840,7 +840,7 @@
         ],
         "content_type": [
             "sixerrapp",
-            "story"
+            "gig"
         ],
         "object_id": "4",
         "object_repr": "Vinschool",
@@ -876,7 +876,7 @@
         ],
         "content_type": [
             "sixerrapp",
-            "story"
+            "gig"
         ],
         "object_id": "2",
         "object_repr": "Elsa",
@@ -894,7 +894,7 @@
         ],
         "content_type": [
             "sixerrapp",
-            "story"
+            "gig"
         ],
         "object_id": "4",
         "object_repr": "Education Trend",
@@ -912,7 +912,7 @@
         ],
         "content_type": [
             "sixerrapp",
-            "story"
+            "gig"
         ],
         "object_id": "2",
         "object_repr": "Elsa Featured",
@@ -930,7 +930,7 @@
         ],
         "content_type": [
             "sixerrapp",
-            "story"
+            "gig"
         ],
         "object_id": "1",
         "object_repr": "Klara",
@@ -948,7 +948,7 @@
         ],
         "content_type": [
             "sixerrapp",
-            "story"
+            "gig"
         ],
         "object_id": "4",
         "object_repr": "Education Trend",
@@ -966,7 +966,7 @@
         ],
         "content_type": [
             "sixerrapp",
-            "story"
+            "gig"
         ],
         "object_id": "3",
         "object_repr": "Shark Dung's Companies",
@@ -984,7 +984,7 @@
         ],
         "content_type": [
             "sixerrapp",
-            "story"
+            "gig"
         ],
         "object_id": "2",
         "object_repr": "Elsa Featured",
@@ -1002,7 +1002,7 @@
         ],
         "content_type": [
             "sixerrapp",
-            "story"
+            "gig"
         ],
         "object_id": "1",
         "object_repr": "Klara",
@@ -1020,7 +1020,7 @@
         ],
         "content_type": [
             "sixerrapp",
-            "story"
+            "gig"
         ],
         "object_id": "4",
         "object_repr": "Education Trend",
@@ -1038,7 +1038,7 @@
         ],
         "content_type": [
             "sixerrapp",
-            "story"
+            "gig"
         ],
         "object_id": "3",
         "object_repr": "Shark Dung's Companies",
@@ -1056,7 +1056,7 @@
         ],
         "content_type": [
             "sixerrapp",
-            "story"
+            "gig"
         ],
         "object_id": "6",
         "object_repr": "FinTech Companies",
@@ -1074,7 +1074,7 @@
         ],
         "content_type": [
             "sixerrapp",
-            "story"
+            "gig"
         ],
         "object_id": "4",
         "object_repr": "Education Trend",
@@ -1092,7 +1092,7 @@
         ],
         "content_type": [
             "sixerrapp",
-            "story"
+            "gig"
         ],
         "object_id": "4",
         "object_repr": "Education Trend",
@@ -1110,7 +1110,7 @@
         ],
         "content_type": [
             "sixerrapp",
-            "story"
+            "gig"
         ],
         "object_id": "2",
         "object_repr": "Elsa Featured",
@@ -1128,7 +1128,7 @@
         ],
         "content_type": [
             "sixerrapp",
-            "story"
+            "gig"
         ],
         "object_id": "1",
         "object_repr": "Klara",
@@ -1200,7 +1200,7 @@
         ],
         "content_type": [
             "sixerrapp",
-            "story"
+            "gig"
         ],
         "object_id": "3",
         "object_repr": "Shark Dung's Companies",
@@ -1218,7 +1218,7 @@
         ],
         "content_type": [
             "sixerrapp",
-            "story"
+            "gig"
         ],
         "object_id": "4",
         "object_repr": "Education Trend",
@@ -1236,7 +1236,7 @@
         ],
         "content_type": [
             "sixerrapp",
-            "story"
+            "gig"
         ],
         "object_id": "2",
         "object_repr": "Elsa Featured",
@@ -1254,7 +1254,7 @@
         ],
         "content_type": [
             "sixerrapp",
-            "story"
+            "gig"
         ],
         "object_id": "1",
         "object_repr": "Klara",
@@ -1290,7 +1290,7 @@
         ],
         "content_type": [
             "sixerrapp",
-            "story"
+            "gig"
         ],
         "object_id": "6",
         "object_repr": "FinTech Companies",
@@ -1308,7 +1308,7 @@
         ],
         "content_type": [
             "sixerrapp",
-            "story"
+            "gig"
         ],
         "object_id": "6",
         "object_repr": "FinTech Companies",
@@ -1326,7 +1326,7 @@
         ],
         "content_type": [
             "sixerrapp",
-            "story"
+            "gig"
         ],
         "object_id": "4",
         "object_repr": "Education Trend",
@@ -1344,7 +1344,7 @@
         ],
         "content_type": [
             "sixerrapp",
-            "story"
+            "gig"
         ],
         "object_id": "3",
         "object_repr": "Shark Dung's Companies",
@@ -1362,7 +1362,7 @@
         ],
         "content_type": [
             "sixerrapp",
-            "story"
+            "gig"
         ],
         "object_id": "2",
         "object_repr": "Elsa Featured",
@@ -1380,7 +1380,7 @@
         ],
         "content_type": [
             "sixerrapp",
-            "story"
+            "gig"
         ],
         "object_id": "1",
         "object_repr": "Klara",

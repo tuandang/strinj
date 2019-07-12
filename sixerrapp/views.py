@@ -4,6 +4,8 @@ from django.contrib.auth.forms import UserCreationForm
 from django import forms
 from django.http import HttpResponse, HttpResponseRedirect 
 from django.core.urlresolvers import reverse
+from django.utils import timezone
+
 
 from .models import *
 from .forms import *
@@ -12,59 +14,63 @@ from .forms import *
 
 # Create your views here..
 def home(request):
-    gigs = Gig.objects.filter(status=True)
-    return render(request, 'home.html', {"gigs": gigs})
+    stories = Story.objects.all()
+    jobs = Job.objects.filter(deadline__gte=timezone.now())
+    # print(stories[0].companies)
+    # print(stories[0].companies[0].job_set.all())
+    # TODO: Add a filter for jobs 
+    return render(request, 'home.html', {"stories": stories, "jobs": jobs})
 
-##### Gig related #####
+##### Story related #####
 
-def gig_detail(request, id):
+def story_detail(request, id):
     try:
-        gig = Gig.objects.get(id=id)
-    except Gig.DoesNotExist:
+        story = Story.objects.get(id=id)
+    except Story.DoesNotExist:
         return redirect('/')
 
 
 
-    companies = Company.objects.filter(gig=gig)
-    return render(request, 'gig_detail.html', {"companies": companies, "gig": gig})
+    companies = Company.objects.filter(story=story)
+    return render(request, 'story_detail.html', {"companies": companies, "story": story})
 
 @login_required(login_url="/")
-def create_gig(request):
+def create_story(request):
     error = ''
     if request.method == 'POST':
-        gig_form = GigForm(request.POST, request.FILES)
-        if gig_form.is_valid():
-            gig = gig_form.save(commit=False)
-            gig.user = request.user
-            gig.save()
-            return redirect('my_gigs')
+        story_form = StoryForm(request.POST, request.FILES)
+        if story_form.is_valid():
+            story = story_form.save(commit=False)
+            story.user = request.user
+            story.save()
+            return redirect('my_stories')
         else:
             error = "Data is not valid"
 
-    gig_form = GigForm()
-    return render(request, 'create_gig.html', {"error": error})
+    story_form = StoryForm()
+    return render(request, 'create_story.html', {"error": error})
 
 @login_required(login_url="/")
-def edit_gig(request, id):
+def edit_story(request, id):
     try:
-        gig = Gig.objects.get(id=id, user=request.user)
+        story = Story.objects.get(id=id, author=request.user)
         error = ''
         if request.method == 'POST':
-            gig_form = GigForm(request.POST, request.FILES, instance=gig)
-            if gig_form.is_valid():
-                gig.save()
-                return redirect('my_gigs')
+            story_form = StoryForm(request.POST, request.FILES, instance=story)
+            if story_form.is_valid():
+                story.save()
+                return redirect('my_stories')
             else:
                 error = "Data is not valid"
 
-        return render(request, 'edit_gig.html', {"gig": gig, "error": error})
-    except Gig.DoesNotExist:
+        return render(request, 'edit_story.html', {"story": story, "error": error})
+    except Story.DoesNotExist:
         return redirect('/')
 
 @login_required(login_url="/")
-def my_gigs(request):
-    gigs = Gig.objects.filter(user=request.user)
-    return render(request, 'my_gigs.html', {"gigs": gigs})
+def my_stories(request):
+    stories = Story.objects.filter(author=request.user)
+    return render(request, 'my_stories.html', {"stories": stories})
 
 ##### Profile related ######
 
@@ -89,8 +95,8 @@ def profile(request, username):
         except Profile.DoesNotExist:
             return redirect('/')
 
-    gigs = Gig.objects.filter(user=profile.user, status=True)
-    return render(request, 'profile.html', {"profile": profile, "gigs": gigs})
+    stories = Story.objects.filter(author=profile.user)
+    return render(request, 'profile.html', {"profile": profile, "stories": stories})
 
 def create_profile(request):
     if request.method == 'POST':
@@ -103,23 +109,23 @@ def create_profile(request):
 
     return render(request, 'create_profile.html',{'form':form})
 
-def category(request, link):
-    categories = {
-        "graphics-design": "GD",
-        "digital-marketing": "DM",
-        "video-animation": "VA",
-        "music-audio": "MA",
-        "programming-tech": "PT"
-    }
-    try:
-        gigs = Gig.objects.filter(category=categories[link])
-        return render(request, 'home.html', {"gigs": gigs})
-    except KeyError:
-        return redirect('home')
+# def category(request, link):
+#     categories = {
+#         "graphics-design": "GD",
+#         "digital-marketing": "DM",
+#         "video-animation": "VA",
+#         "music-audio": "MA",
+#         "programming-tech": "PT"
+#     }
+#     try:
+#         stories = Story.objects.filter(category=categories[link])
+#         return render(request, 'home.html', {"stories": stories})
+#     except KeyError:
+#         return redirect('home')
 
 def search(request):
-    gigs = Gig.objects.filter(title__contains=request.GET['title'])
-    return render(request, 'home.html', {'gigs': gigs})
+    stories = Story.objects.filter(title__contains=request.GET['title'])
+    return render(request, 'home.html', {'stories': stories})
 
 def register(request):
     # if sending data to server
@@ -173,14 +179,14 @@ def edit_company(request):
                 error = "Data is not valid"
                 return render(request, 'edit_company.html', {"error": error})
 
-        # retrieve company info: gig, all registered people, jobs
-        gigs = Gig.objects.filter(company=company)
+        # retrieve company info: story, all registered people, jobs
+        stories = Story.objects.filter(companies=company)
         profiles = Profile.objects.filter(company=company)
         jobs = Job.objects.filter(company=company)
         return render(request, 'edit_company.html', {
             "error": error,
             "company": company, 
-            "gigs": gigs,
+            "stories": stories,
             "profiles": profiles,
             "jobs": jobs
             })
@@ -206,7 +212,6 @@ def create_job(request):
 @login_required(login_url="/")
 def edit_job(request, id):
     try:
-        print("H")
         job = Job.objects.get(id=id)
         if job.company != Profile.objects.get(user=request.user).company:
             error = 'You do not have access to view this job'
@@ -221,6 +226,15 @@ def edit_job(request, id):
                 error = "Data is not valid"
 
         return render(request, 'edit_job.html', {"job": job, "error": error})
+    except Job.DoesNotExist:
+        return redirect('/')
+
+@login_required(login_url="/")
+def view_job(request, id):
+    try:
+        job = Job.objects.get(id=id)
+        error = ''
+        return render(request, 'view_job.html', {"job": job, "error": error})
     except Job.DoesNotExist:
         return redirect('/')
 

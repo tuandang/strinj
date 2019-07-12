@@ -11,21 +11,19 @@
     </div>
   {% endif %}
 
-  <div class="sidenav"> <!-- TODO: Fix bug: because header covers part of the form, sidebar does not work correctly -->
-    <hr>
-    <hr>
+  <div class="sidenav left"> <!-- TODO: Fix bug: because header covers part of the form, sidebar might not work correctly -->
     <a href="#about">About</a>
     <a href="#members">Members</a>
-    <a href="#gigs">Gigs</a>
+    <a href="#story">Stories</a>
     <a href="#jobs">Jobs</a>
   </div>
 
   <div class="panel panel-default">
     <div class="panel-body">
       <!-- Main information about the company -->
-      <form class="form-horizontal" method="POST" enctype="multipart/form-data" action='{% url "edit_company" %}' id="about">
+      <form class="form-horizontal" method="POST" enctype="multipart/form-data" action='{% url "edit_company" %}'>
         {% csrf_token %}
-        <h2 style="margin-bottom: 30px">Company {{ company.title }}</h2>
+        <h2 style="margin-bottom: 30px" id="about">Company {{ company.title }}</h2>
 
         <div class="form-group">
           <label class="col-sm-2 control-label">DESCRIPTION</label>
@@ -50,8 +48,8 @@
       </form>
     <hr>
     <!-- Members of companies -->
-    <h2 style="margin-bottom: 30px">Members</h2>
-      <div class="panel panel-default" id="members">
+    <h2 style="margin-bottom: 30px" id="members">Members</h2>
+      <div class="panel panel-default">
         <table class="table table-bordered table-striped">
           <thead class="bg-success">
             <tr>
@@ -75,26 +73,26 @@
         </table>
       </div>
     <hr>
-    <!-- GiGs -->
-    <h2 style="margin-bottom: 30px">Gigs</h2>
-      <div class="panel panel-default" id="gigs">
+    <!-- Stories -->
+    <h2 style="margin-bottom: 30px" id="story">Story</h2>
+      <div class="panel panel-default">
         <table class="table table-bordered table-striped">
           <thead class="bg-success">
             <tr>
               <th>
-                <th>Gig Title</th>
+                <th>Title</th>
                 <th>Status</th>
                 <th>Time created</th>
               </th>
             </tr>
           </thead>
           <tbod>
-            {% for gig in gigs %}
+            {% for story in stories %}
               <tr>
                 <td>{{ forloop.counter }}</td>
-                <td> <a href="{% url 'edit_gig' gig.id %}">{{ gig.title }}</a> </td>
-                <td>{% if gig.status %} Active {% else %} Disabled {% endif %} </td>
-                <td> {{ gig.create_time }} </td>
+                <td> <a href="{% url 'edit_story' story.id %}">{{ story.title }}</a> </td>
+                <td>{% if story.status %} Active {% else %} Disabled {% endif %} </td>
+                <td> {{ story.create_time }} </td>
               </tr>
             {% endfor %}
           </tbod>
@@ -102,8 +100,8 @@
       </div>
     <hr>
     <!-- Job posting -->
-    <h2 style="margin-bottom: 30px">Jobs posting</h2>
-      <div class="panel panel-default" id="jobs">
+    <h2 style="margin-bottom: 30px" id="jobs">Jobs posting</h2>
+      <div class="panel panel-default">
         <table class="table table-bordered table-striped">
           <thead class="bg-success">
             <tr>

@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block page %}
+  {% if error %}
+    <div class="alert alert-warning alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <strong>Warning!</strong> {{ error }}
+    </div>
+  {% endif %}
+
+  <div class="panel panel-default">
+    <div class="panel-body">
+    {% csrf_token %}
+      <h2>Job title</h2>
+      <div>{{ job.title }}</div>
+
+      <h2>Description</h2>
+      <div>{{ job.description }}</div>
+
+      <h2>Requirements</h2>
+      <div>{{ job.requirements }}</div>
+
+      <h2>Url</h2>
+      <div>{{ job.url }}</div>
+
+      <h2>Deadline</h2>
+      <div>{{ job.deadline|date:'m-d-Y' }}</div>
+
+      <div class="col-sm-offset-2 col-sm-2">
+        <button type="submit" class="btn btn-success">Apply</button>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

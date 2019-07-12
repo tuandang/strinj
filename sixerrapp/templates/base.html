@@ -31,7 +31,7 @@
   mixpanel.init("7466edd5c0393afd5af95837ccd7e114");</script><!-- end Mixpanel -->
   </head>
   <body>
-    <nav class="navbar navbar-default navbar-fixed-top">
+    <nav class="navbar navbar-default navbar-fixed-top" id="navbar">
         <div class="container">
           <div class="navbar-header">
             <a style="padding-top:0px;" class="navbar-brand" href="/"><img src="{% static 'img/logo_new.png' %}" height="50"></a>
@@ -76,5 +76,18 @@
         <span>Strinj &copy; 2018</span><br>
       </div>
     </footer>
+    
+    <script>
+      var prevScrollpos = window.pageYOffset;
+      window.onscroll = function() {
+      var currentScrollPos = window.pageYOffset;
+        if (prevScrollpos > currentScrollPos) {
+          document.getElementById("navbar").style.top = "0";
+        } else {
+          document.getElementById("navbar").style.top = "-80px";
+        }
+        prevScrollpos = currentScrollPos;
+      }
+    </script>1
   </body>
 </html>
