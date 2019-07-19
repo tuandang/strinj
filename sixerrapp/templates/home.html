@@ -3,13 +3,6 @@
 
 {% block page %}
 
-  <!-- <div class="sidenav right">
-    {% for job in jobs %}
-    <a class="title" href="{% url 'view_job' job.id %}" >{{ job.title }}</a>
-    <p style="margin-top:20px;margin-bottom:20px;margin-left:20px;margin-right:20px;line-height:1.7">{{ job.description }}</p>
-    {% endfor %}
-  </div> -->
-
   <div class="row">
 
     {% for story in stories %}
@@ -23,13 +16,18 @@
                 <a style="margin-left:10px;margin-top:10px;margin-bottom:10px" class="btn btn-info" target="_blank">{{ hashtag.name }}</a>
                 {% endfor %} -->
             {% for company in story.companies.all %}
-              <a class="btn btn-success collapsible" style="margin-left:30px;margin-bottom:15px;width:230px">{{ company.title }}</a>
+              <a class="btn btn-success collapsible collase_down" style="margin-left:30px;margin-bottom:15px;width:230px">{{ company.title }}</a>
               <div class="content"> <!-- Only show when the previous button is clicked -->
                 <div style="background-color: #f1f1f1;">
                   {% for job in company.job_set.all %}
                     <div>
-                      <a style="margin-left:10px;margin-top:10px;margin-bottom:10px" href="{{ job.url }}" class="btn btn-primary" target="_blank">{{ job.title }}</a>
+                      <a style="margin-left:10px;margin-top:10px;margin-bottom:10px" class="btn btn-primary collase_right" target="_blank">{{ job.title }}</a>
+                      <div class="content sidenav right"> <!-- Contain job description -->
+                        <h3 style="text-align:center">{{ job.title }}</h3>
+                        <p style="margin-top:20px;margin-bottom:20px;margin-left:20px;margin-right:20px;line-height:1.7">{{ job.description }}</p>
+                      </div>  
                       <p style="display:inline; margin-left:10px;margin-top:10px;margin-bottom:10px">{{ job.requirements }}</p>
+                      <a style="margin-right:10px;margin-top:10px;margin-bottom:10px" href="{{ job.url }}" class="btn btn-success" target="_blank">Apply</a>
                     <!-- {% for hashtag in job.hashtags %} TODO
                     <a style="margin-left:10px;margin-top:10px;margin-bottom:10px" class="btn btn-info" target="_blank">{{ hashtag.name }}</a>
                     {% endfor %} -->
@@ -44,12 +42,29 @@
       </div>
     {% endfor %}
   </div>
+
 <script>
-var coll = document.getElementsByClassName("collapsible");
+// Collapse down for all jobs
+var coll = document.getElementsByClassName("collase_down");
 var i;
 
 for (i = 0; i < coll.length; i++) {
   coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+
+// Collapse right for job description
+var collase_right = document.getElementsByClassName("collase_right");
+
+for (i = 0; i < collase_right.length; i++) {
+  collase_right[i].addEventListener("click", function() {
     this.classList.toggle("active");
     var content = this.nextElementSibling;
     if (content.style.display === "block") {

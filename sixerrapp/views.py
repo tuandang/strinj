@@ -29,8 +29,6 @@ def story_detail(request, id):
     except Story.DoesNotExist:
         return redirect('/')
 
-
-
     companies = Company.objects.filter(story=story)
     return render(request, 'story_detail.html', {"companies": companies, "story": story})
 
