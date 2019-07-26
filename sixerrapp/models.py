@@ -44,7 +44,7 @@ class SkillOrTool(models.Model):
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     avatar = models.CharField(max_length=500)
-    about = models.TextField()
+    about = models.TextField(blank=True, null=True)
     create_time = models.DateTimeField(default=timezone.now)
     hashtags = models.ManyToManyField(Hashtag)
 
