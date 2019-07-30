@@ -13,18 +13,18 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-#         migrations.CreateModel(
-#             name='Job',
-#             fields=[
-#                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-#                 ('title', models.CharField(max_length=500)),
-#                 ('requirements', models.TextField()),
-#                 ('description', models.TextField()),
-#                 ('deadline', models.DateTimeField(blank=True, null=True)),
-#                 ('url', models.TextField()),
-#                 ('company', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='sixerrapp.Company')),
-#             ],
-#         ),
+        migrations.CreateModel(
+            name='Job',
+            fields=[
+                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('title', models.CharField(max_length=500)),
+                ('requirements', models.TextField()),
+                ('description', models.TextField()),
+                ('deadline', models.DateTimeField(blank=True, null=True)),
+                ('url', models.TextField()),
+                ('company', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='sixerrapp.Company')),
+            ],
+        ),
         migrations.AlterField(
             model_name='profile',
             name='company',
