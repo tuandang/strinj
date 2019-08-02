@@ -75,7 +75,7 @@ class Recruiter(models.Model):
 
 class Job(models.Model):
     title = models.CharField(max_length=500)
-    companies = models.ForeignKey(Company, on_delete=models.CASCADE)
+    company = models.ForeignKey(Company, on_delete=models.CASCADE)
     description = models.TextField()
     requirements = models.TextField()
     url = models.TextField()
