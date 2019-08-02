@@ -44,7 +44,7 @@ class SkillOrTool(models.Model):
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     avatar = models.CharField(max_length=500)
-    about = models.TextField()
+    about = models.TextField(blank=True, null=True)
     create_time = models.DateTimeField(default=timezone.now)
     hashtags = models.ManyToManyField(Hashtag)
 
@@ -75,7 +75,7 @@ class Recruiter(models.Model):
 
 class Job(models.Model):
     title = models.CharField(max_length=500)
-    company = models.ForeignKey(Company, on_delete=models.CASCADE)
+    company = models.ForeignKey(Company, on_delete=models.CASCADE, blank=True, null=True)
     description = models.TextField()
     requirements = models.TextField()
     url = models.TextField()

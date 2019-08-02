@@ -6,14 +6,14 @@
   <div class="row">
 
 
-    {% for gig in gigs %}
+    {% for story in stories %}
       <div class="col-md-12">
         <div class="thumbnail">
-          <img style="margin-top:30px" src="https://bucketeer-935c55d6-c0d5-4764-ad10-72daed5b3527.s3.amazonaws.com/media/{{gig.photo}}" width="700" height="300">
+          <img style="margin-top:30px" src="https://bucketeer-935c55d6-c0d5-4764-ad10-72daed5b3527.s3.amazonaws.com/media/{{story.photo}}" width="700" height="300">
           <div class="caption">
-            <p style="margin-top:30px;margin-bottom:30px;margin-left:30px;margin-right:30px;line-height:1.7">{{gig.description}}</p>
+            <p style="margin-top:30px;margin-bottom:30px;margin-left:30px;margin-right:30px;line-height:1.7">{{story.description}}</p>
 
-            {% for company in gig.company.all %}
+            {% for company in story.companies.all %}
               <a style="margin-left:30px;margin-bottom:15px;width:230px" href="{{company.url}}" class="btn btn-success" target="_blank">Jobs At {{ company.title }}</a>
             {% endfor %}
           </div>
