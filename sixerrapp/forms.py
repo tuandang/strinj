@@ -4,17 +4,17 @@ from .models import *
 class StoryForm(forms.ModelForm):
     class Meta:
         model = Story
-        fields = ['title', 'description', 'photo'] # TODO: hashtags
+        fields = ['title', 'content', 'photo']
 
 class ProfileForm(forms.ModelForm):
 	class Meta:
-		model = Profile
-		fields = []
+		model = Personal
+		fields = ['resume']
 
 class CompanyForm(forms.ModelForm):
 	class Meta:
 		model = Company
-		fields = ['title', 'url']
+		fields = ['title', 'profile', 'url']
 
 # class FeedbackForm(forms.ModelForm):
 # 	class Meta:

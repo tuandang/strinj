@@ -8,8 +8,7 @@
       <thead class="bg-success">
         <tr>
           <th>
-            <th>Stories Title</th>
-            <th>Status</th>
+            <th>Story Title</th>
           </th>
         </tr>
       </thead>
@@ -18,7 +17,6 @@
           <tr>
             <td>{{ forloop.counter }}</td>
             <td><a href="{% url 'edit_story' story.id %}">{{ story.title }}</a></td>
-            <td>{% if story.status %} Active {% else %} Disabled {% endif %} </td>
           </tr>
         {% endfor %}
       </tbod>

@@ -9,7 +9,7 @@
         <div class="panel-body">
           <h3>{{ story.title }}</h3>
           <hr/>
-          <img src="/media/{{ story.photo }}" class="img-repsonsive center-block">
+          <img src="/media/{{ story.photo }}" class="img-responsive center-block">
         </div>
       </div>
       <div class="panel panel-default">
@@ -17,7 +17,7 @@
           <h4>About This Story</h4>
         </div>
         <div class="panel-body">
-          <p>{{ story.description }}</p>
+          <p>{{ story.content }}</p>
         </div>
       </div>
     </div>
@@ -28,6 +28,10 @@
           <a href="{% url 'profile' story.user.username %}"><h4 class="text-center">{{ story.user.username }}</h4></a>
           <hr/>
           <p>{{ story.user.profile.about }}</p>
+          <img src="{{ story.author.profile.avatar }}" class="img-circle center-block" height="100" width="100">
+          <a href="{% url 'profile' story.user.username %}"><h4 class="text-center">{{ story.author.username }}</h4></a>
+          <hr/>
+          <p>{{ story.author.profile.about }}</p>
         </div>
       </div>
     </div>

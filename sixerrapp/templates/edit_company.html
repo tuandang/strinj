@@ -14,7 +14,7 @@
   <div class="sidenav left"> <!-- TODO: Fix bug: because header covers part of the form, sidebar might not work correctly -->
     <a href="#about">About</a>
     <a href="#members">Members</a>
-    <a href="#story">Stories</a>
+    <a href="#stories">Stories</a>
     <a href="#jobs">Jobs</a>
   </div>
 
@@ -74,13 +74,13 @@
       </div>
     <hr>
     <!-- Stories -->
-    <h2 style="margin-bottom: 30px" id="story">Story</h2>
-      <div class="panel panel-default">
+    <h2 style="margin-bottom: 30px">Stories</h2>
+      <div class="panel panel-default" id="stories">
         <table class="table table-bordered table-striped">
           <thead class="bg-success">
             <tr>
               <th>
-                <th>Title</th>
+                <th>Story Title</th>
                 <th>Status</th>
                 <th>Time created</th>
               </th>
@@ -91,7 +91,7 @@
               <tr>
                 <td>{{ forloop.counter }}</td>
                 <td> <a href="{% url 'edit_story' story.id %}">{{ story.title }}</a> </td>
-                <td>{% if story.status %} Active {% else %} Disabled {% endif %} </td>
+               <!--  <td>{% if story.status %} Active {% else %} Disabled {% endif %} </td> -->
                 <td> {{ story.create_time }} </td>
               </tr>
             {% endfor %}

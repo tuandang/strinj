@@ -51,7 +51,7 @@ def create_story(request):
 @login_required(login_url="/")
 def edit_story(request, id):
     try:
-        story = Story.objects.get(id=id, author=request.user)
+        story = Story.objects.get(id=id, user=request.user)
         error = ''
         if request.method == 'POST':
             story_form = StoryForm(request.POST, request.FILES, instance=story)
@@ -67,7 +67,7 @@ def edit_story(request, id):
 
 @login_required(login_url="/")
 def my_stories(request):
-    stories = Story.objects.filter(author=request.user)
+    stories = Story.objects.filter(user=request.user)
     return render(request, 'my_stories.html', {"stories": stories})
 
 ##### Profile related ######
@@ -93,7 +93,7 @@ def profile(request, username):
         except Profile.DoesNotExist:
             return redirect('/')
 
-    stories = Story.objects.filter(author=profile.user)
+    stories = Story.objects.filter(user=profile.user)
     return render(request, 'profile.html', {"profile": profile, "stories": stories})
 
 def create_profile(request):
@@ -106,20 +106,6 @@ def create_profile(request):
         form = ProfileForm()
 
     return render(request, 'create_profile.html',{'form':form})
-
-# def category(request, link):
-#     categories = {
-#         "graphics-design": "GD",
-#         "digital-marketing": "DM",
-#         "video-animation": "VA",
-#         "music-audio": "MA",
-#         "programming-tech": "PT"
-#     }
-#     try:
-#         stories = Story.objects.filter(category=categories[link])
-#         return render(request, 'home.html', {"stories": stories})
-#     except KeyError:
-#         return redirect('home')
 
 def search(request):
     stories = Story.objects.filter(title__contains=request.GET['title'])
@@ -178,7 +164,7 @@ def edit_company(request):
                 return render(request, 'edit_company.html', {"error": error})
 
         # retrieve company info: story, all registered people, jobs
-        stories = Story.objects.filter(companies=company)
+        stories = Story.objects.filter(company=company)
         profiles = Profile.objects.filter(company=company)
         jobs = Job.objects.filter(company=company)
         return render(request, 'edit_company.html', {
