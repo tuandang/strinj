@@ -6,8 +6,6 @@ local_settings.py
 
 staticfiles
 .env
-migrations
-sixerrapp/migrations/*
 admin.py
 .DS_Store
 

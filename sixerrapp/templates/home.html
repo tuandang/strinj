@@ -19,20 +19,29 @@
               <a class="btn btn-success collapsible collase_down" style="margin-left:30px;margin-bottom:15px;width:230px">{{ company.title }}</a>
               <div class="content"> <!-- Only show when the previous button is clicked -->
                 <div style="background-color: #f1f1f1;">
-                  {% for job in company.job_set.all %}
-                    <div>
-                      <a style="margin-left:10px;margin-top:10px;margin-bottom:10px" class="btn btn-primary collase_right" target="_blank">{{ job.title }}</a>
-                      <div class="content sidenav right"> <!-- Contain job description -->
-                        <h3 style="text-align:center">{{ job.title }}</h3>
-                        <p style="margin-top:20px;margin-bottom:20px;margin-left:20px;margin-right:20px;line-height:1.7">{{ job.description }}</p>
-                      </div>  
-                      <p style="display:inline; margin-left:10px;margin-top:10px;margin-bottom:10px">{{ job.requirements }}</p>
-                      <a style="margin-right:10px;margin-top:10px;margin-bottom:10px" href="{{ job.url }}" class="btn btn-success" target="_blank">Apply</a>
-                    <!-- {% for hashtag in job.hashtags %} TODO
-                    <a style="margin-left:10px;margin-top:10px;margin-bottom:10px" class="btn btn-info" target="_blank">{{ hashtag.name }}</a>
-                    {% endfor %} -->
-                    </div>
-                  {% endfor %}
+                  {% if company.job_set.all %}
+                    {% for job in company.job_set.all %}
+                      <div>
+                        <a style="margin-left:10px;margin-top:10px;margin-bottom:10px" class="btn btn-primary collase_right" target="_blank">{{ job.title }}</a>
+                          
+                          <div class="content sidenav right"> <!-- Contain job description, originally hidden -->
+                            <h3 style="text-align:center">{{ job.title }}</h3>
+                            <h4 style="text-align:center">Description</h4>
+                            <p style="margin-top:20px;margin-bottom:20px;margin-left:20px;margin-right:20px;line-height:1.7">{{ job.description }}</p>
+                            <h4 style="text-align:center">Requirements</h4>
+                            <p style="margin-top:20px;margin-bottom:20px;margin-left:20px;margin-right:20px;line-height:1.7">{{ job.requirements }}</p>
+                          </div>
+
+                        <p style="display:inline; margin-left:10px;margin-top:10px;margin-bottom:10px">{{ job.requirements }}</p>
+                        <a style="margin-right:10px;margin-top:10px;margin-bottom:10px" href="{{ job.url }}" class="btn btn-success" target="_blank">Apply</a>
+                      <!-- {% for hashtag in job.hashtags %} TODO
+                      <a style="margin-left:10px;margin-top:10px;margin-bottom:10px" class="btn btn-info" target="_blank">{{ hashtag.name }}</a>
+                      {% endfor %} -->
+                      </div>
+                    {% endfor %}
+                  {% else %}
+                    <h4 style="margin-top:10px;margin-bottom:10px;margin-left:10px;margin-right:10px"> There is no current openings.</h4>
+                  {% endif %}
                 </div>
                 <br>
               </div>

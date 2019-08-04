@@ -236,6 +236,22 @@ def view_job(request, id):
     except Job.DoesNotExist:
         return redirect('/')
 
+# @login_required(login_url="/")
+# def add_feedback(request):
+#     error = ''
+#     if request.method == 'POST':
+#         feedback_form = FeedbackForm(request.POST, request.FILES)
+#         if feedback_form.is_valid():
+#             feedback = feedback_form.save(commit=False)
+#             feedback.user = request.user
+#             feedback.save()
+#             return render(request, 'create_feedback.html', {"success": True})
+#         else:
+#             error = "Data is not valid"
+
+#     feedback_form = FeedbackForm()
+#     return render(request, 'create_feedback.html', {"error": error})
+
 class UserCreateForm(UserCreationForm):
     email = forms.EmailField(required=True)
 

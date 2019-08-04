@@ -93,7 +93,7 @@ a:hover {
 
 /* Navigration Sidebar */
 .sidenav {
-  width: 200px;
+  width: 150px;
   position: fixed;
   z-index: 1;
   top: 90px;
@@ -121,11 +121,11 @@ a:hover {
 }
 
 .sidenav.left {
-  left: 10px;
+  left: 25px;
 }
 
 .sidenav.right {
-  right: 10px;
+  right: 25px;
 }
 
 /* Collapsible */
@@ -143,9 +143,18 @@ a:hover {
 
 .content {
   margin-left:30px;
+  /*width: 80%;*/
   padding: 0 18px;
   display: none;
   overflow: hidden;
+}
+
+.span_long {
+    display: inline-block;
+    width: 60%;
+    white-space: nowrap;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
 }
 
 /*a .content{
