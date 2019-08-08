@@ -16,8 +16,6 @@ from .forms import *
 def home(request):
     stories = Story.objects.all()
     jobs = Job.objects.filter(deadline__gte=timezone.now())
-    # print(stories[0].companies)
-    # print(stories[0].companies[0].job_set.all())
     # TODO: Add a filter for jobs 
     return render(request, 'home.html', {"stories": stories, "jobs": jobs})
 
@@ -67,7 +65,7 @@ def edit_story(request, id):
 
 @login_required(login_url="/")
 def my_stories(request):
-    stories = Story.objects.filter(user=request.user)
+    stories = Story.objects.filter(author=request.user)
     return render(request, 'my_stories.html', {"stories": stories})
 
 ##### Profile related ######
@@ -93,7 +91,7 @@ def profile(request, username):
         except Profile.DoesNotExist:
             return redirect('/')
 
-    stories = Story.objects.filter(user=profile.user)
+    stories = Story.objects.filter(author=profile.user)
     return render(request, 'profile.html', {"profile": profile, "stories": stories})
 
 def create_profile(request):
@@ -222,21 +220,22 @@ def view_job(request, id):
     except Job.DoesNotExist:
         return redirect('/')
 
-# @login_required(login_url="/")
-# def add_feedback(request):
-#     error = ''
-#     if request.method == 'POST':
-#         feedback_form = FeedbackForm(request.POST, request.FILES)
-#         if feedback_form.is_valid():
-#             feedback = feedback_form.save(commit=False)
-#             feedback.user = request.user
-#             feedback.save()
-#             return render(request, 'create_feedback.html', {"success": True})
-#         else:
-#             error = "Data is not valid"
+@login_required(login_url="/")
+def create_feedback(request):
+    error = ''
+    if request.method == 'POST':
+        feedback_form = FeedbackForm(request.POST, request.FILES)
+        if feedback_form.is_valid():
+            # print("Valid")
+            feedback = feedback_form.save(commit=False)
+            # feedback.user = request.user
+            feedback.save()
+            return render(request, 'create_feedback.html', {"success": True})
+        else:
+            error = "Data is not valid"
 
-#     feedback_form = FeedbackForm()
-#     return render(request, 'create_feedback.html', {"error": error})
+    feedback_form = FeedbackForm()
+    return render(request, 'create_feedback.html', {"error": error})
 
 class UserCreateForm(UserCreationForm):
     email = forms.EmailField(required=True)

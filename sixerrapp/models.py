@@ -85,8 +85,9 @@ class Job(models.Model):
     def __str__(self):
         return self.title
 
-# class Feedback(models.Model):
-    
+class Feedback(models.Model):
+    user = models.OneToOneField(Personal, on_delete=models.CASCADE)
+    content = models.TextField()
 
 class Story(models.Model):
     title = models.CharField(max_length=500)

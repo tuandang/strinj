@@ -12,9 +12,6 @@
           <div class="caption">
             <p style="margin-top:30px;margin-bottom:30px;margin-left:30px;margin-right:30px;line-height:1.7">{{ story.description }}</p>
             <h3 style="margin-top:30px;margin-bottom:30px;margin-left:30px;margin-right:30px;line-height:1.7">Featured companies:</h3>
-            <!-- {% for hashtag in story.hashtags %} TODO
-                <a style="margin-left:10px;margin-top:10px;margin-bottom:10px" class="btn btn-info" target="_blank">{{ hashtag.name }}</a>
-                {% endfor %} -->
             {% for company in story.companies.all %}
               <a class="btn btn-success collapsible collase_down" style="margin-left:30px;margin-bottom:15px;width:230px">{{ company.title }}</a>
               <div class="content"> <!-- Only show when the previous button is clicked -->
@@ -34,9 +31,6 @@
 
                         <p style="display:inline; margin-left:10px;margin-top:10px;margin-bottom:10px">{{ job.requirements }}</p>
                         <a style="margin-right:10px;margin-top:10px;margin-bottom:10px" href="{{ job.url }}" class="btn btn-success" target="_blank">Apply</a>
-                      <!-- {% for hashtag in job.hashtags %} TODO
-                      <a style="margin-left:10px;margin-top:10px;margin-bottom:10px" class="btn btn-info" target="_blank">{{ hashtag.name }}</a>
-                      {% endfor %} -->
                       </div>
                     {% endfor %}
                   {% else %}
