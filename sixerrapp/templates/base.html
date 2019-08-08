@@ -43,12 +43,11 @@
               </div>
 
             </div>
+            <a class="btn btn-primary" href="{% url 'create_feedback' %}">Feedback</a>
           </form>
-
 
           <ul class="nav navbar-nav navbar-right">
             {% if user and not user.is_anonymous %}
-              <a class="btn btn-success" href="{% url 'create_feedback' %}">Feedback</a>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"
                   role="button" aria-haspopup="true" aria-expanded="fase">
@@ -69,6 +68,23 @@
     </nav>
     <div id="body">
       <div class="container">
+          {% if error %}
+            <div class="alert alert-warning alert-dismissible" role="alert">
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <strong>Warning!</strong> {{ error }}
+            </div>
+          {% endif %}
+          {% if success %}
+            <div class="alert alert-success" role="alert">
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <strong>Success!</strong> {{ success }}
+            </div>
+          {% endif %}
+
         {% block page %}
         {% endblock %}
       </div>

@@ -86,7 +86,7 @@ class Job(models.Model):
         return self.title
 
 class Feedback(models.Model):
-    user = models.OneToOneField(Personal, on_delete=models.CASCADE)
+    user = models.OneToOneField(Personal, blank=True, null=True, on_delete=models.CASCADE)
     content = models.TextField()
 
 class Story(models.Model):

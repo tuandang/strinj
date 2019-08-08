@@ -225,12 +225,13 @@ def create_feedback(request):
     error = ''
     if request.method == 'POST':
         feedback_form = FeedbackForm(request.POST, request.FILES)
+        print(feedback_form)
         if feedback_form.is_valid():
             # print("Valid")
             feedback = feedback_form.save(commit=False)
             # feedback.user = request.user
             feedback.save()
-            return render(request, 'create_feedback.html', {"success": True})
+            return render(request, 'create_feedback.html', {"success": "Your feedback has been recorded"})
         else:
             error = "Data is not valid"
 
