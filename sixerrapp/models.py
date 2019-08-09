@@ -21,7 +21,9 @@ class Hashtag(models.Model):
 class Industry(models.Model):
     hashtag = models.OneToOneField(Hashtag, on_delete=models.CASCADE)
     hashtags = models.ManyToManyField(Hashtag, related_name='related_industry_hashtags')
-
+    
+    class Meta:
+        verbose_name_plural = "industries"
 
 class Sector(models.Model):
     hashtag = models.OneToOneField(Hashtag, on_delete=models.CASCADE)
@@ -56,6 +58,10 @@ class Company(models.Model):
     title = models.CharField(max_length=500)
     url = models.TextField()  # career url
 
+    def __str__(self):
+        return self.title
+    class Meta:
+        verbose_name_plural = "companies"
 
 class Personal(models.Model):
     profile = models.OneToOneField(Profile, on_delete=models.CASCADE)
@@ -86,8 +92,12 @@ class Job(models.Model):
         return self.title
 
 class Feedback(models.Model):
-    user = models.OneToOneField(Personal, blank=True, null=True, on_delete=models.CASCADE)
     content = models.TextField()
+    create_time = models.DateTimeField(default=timezone.now)
+    
+    def __str__(self):
+        return self.content
+# TODO: Icon for demonstrating how satisfied customer is
 
 class Story(models.Model):
     title = models.CharField(max_length=500)
@@ -103,4 +113,7 @@ class Story(models.Model):
 
     def __str__(self):
         return self.title
+
+    class Meta:
+        verbose_name_plural = "stories"
 
