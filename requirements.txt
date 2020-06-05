@@ -1,6 +1,6 @@
 certifi==2018.11.29
 chardet==3.0.4
-Django==1.9.5
+Django==1.11.29
 gunicorn==19.9.0
 idna==2.8
 oauthlib==2.1.0
